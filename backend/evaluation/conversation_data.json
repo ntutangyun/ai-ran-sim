@@ -1,0 +1,766 @@
+{
+  "questions": [
+    {
+      "id": "q_001",
+      "difficulty": "easy",
+      "category": "ue_status",
+      "description": "Basic UE status query",
+      "static_question": "What is the current status of user equipment IMSI_1?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["IMSI_1", "status", "connected"],
+        "self_evaluation_prompt": "Evaluate if the response accurately describes IMSI_1's current status and connection state"
+      }
+    },
+    {
+      "id": "q_002",
+      "difficulty": "easy",
+      "category": "network_overview",
+      "description": "Base station information request",
+      "static_question": "Show me all base stations in the network",
+      "expected_tools": ["get_knowledge_bulk"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["base station", "BS", "network"],
+        "self_evaluation_prompt": "Evaluate if the response provides a comprehensive list of all base stations in the network"
+      }
+    },
+    {
+      "id": "q_003",
+      "difficulty": "easy",
+      "category": "ai_services",
+      "description": "AI services availability",
+      "static_question": "What are the available AI services?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["AI", "service", "available"],
+        "self_evaluation_prompt": "Evaluate if the response lists all available AI services with their capabilities"
+      }
+    },
+    {
+      "id": "q_004",
+      "difficulty": "medium",
+      "category": "relationships",
+      "description": "UE-cell relationship analysis",
+      "static_question": "What is the relationship between IMSI_1 and its serving cell?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["IMSI_1", "serving", "cell", "relationship"],
+        "self_evaluation_prompt": "Evaluate if the response explains the connection relationship between IMSI_1 and its serving cell"
+      }
+    },
+    {
+      "id": "q_005",
+      "difficulty": "medium",
+      "category": "ai_performance",
+      "description": "AI service performance analysis",
+      "static_question": "How are AI services performing in the network?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["AI", "performance", "service", "metrics"],
+        "self_evaluation_prompt": "Evaluate if the response provides a comprehensive analysis of AI service performance metrics"
+      }
+    },
+    {
+      "id": "q_006",
+      "difficulty": "hard",
+      "category": "performance_analysis",
+      "description": "Complex cell performance analysis",
+      "static_question": "Analyze the performance of cell BS_001_Cell_1 and suggest optimizations",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["performance", "analysis", "BS_001_Cell_1", "optimization"],
+        "self_evaluation_prompt": "Evaluate if the response provides detailed performance analysis and actionable optimization recommendations"
+      }
+    },
+    {
+      "id": "q_007",
+      "difficulty": "hard",
+      "category": "network_analysis",
+      "description": "Network bottleneck identification",
+      "static_question": "What are the potential bottlenecks in the current network configuration?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["bottleneck", "network", "configuration", "analysis"],
+        "self_evaluation_prompt": "Evaluate if the response identifies potential network bottlenecks and provides supporting analysis"
+      }
+    },
+    {
+      "id": "q_008",
+      "difficulty": "medium",
+      "category": "ric_operations",
+      "description": "RIC status and operations",
+      "static_question": "What is the current status of the RIC?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["RIC", "status", "controller"],
+        "self_evaluation_prompt": "Evaluate if the response accurately describes the current operational status of the RIC"
+      }
+    },
+    {
+      "id": "q_009",
+      "difficulty": "medium",
+      "category": "xapps",
+      "description": "xApp operations",
+      "static_question": "What xApps are running on the RIC?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["xApp", "RIC", "running"],
+        "self_evaluation_prompt": "Evaluate if the response lists all active xApps running on the RIC"
+      }
+    },
+    {
+      "id": "q_010",
+      "difficulty": "hard",
+      "category": "ric_optimization",
+      "description": "RIC network optimization analysis",
+      "static_question": "How is the RIC managing network optimization?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["RIC", "optimization", "network", "management"],
+        "self_evaluation_prompt": "Evaluate if the response explains how the RIC manages network optimization strategies"
+      }
+    },
+    {
+      "id": "q_011",
+      "difficulty": "easy",
+      "category": "simulation_state",
+      "description": "Simulation state query",
+      "static_question": "What is the current simulation state?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["simulation", "state", "current"],
+        "self_evaluation_prompt": "Evaluate if the response accurately describes the current simulation state"
+      }
+    },
+    {
+      "id": "q_012",
+      "difficulty": "medium",
+      "category": "error_handling",
+      "description": "Non-existent UE query",
+      "static_question": "What is the status of non-existent IMSI_999?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["error", "not found", "invalid"],
+        "self_evaluation_prompt": "Evaluate if the response properly handles the error case for a non-existent UE"
+      }
+    },
+    {
+      "id": "q_013",
+      "difficulty": "hard",
+      "category": "comparative_analysis",
+      "description": "Cell performance comparison",
+      "static_question": "Compare the performance of different cells in the network",
+      "expected_tools": ["get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["compare", "performance", "cell", "network"],
+        "self_evaluation_prompt": "Evaluate if the response provides a comprehensive comparison of cell performance metrics"
+      }
+    },
+    {
+      "id": "q_014",
+      "difficulty": "medium",
+      "category": "ai_usage",
+      "description": "AI service usage patterns",
+      "static_question": "Which UEs are using AI services?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["UE", "AI", "service", "usage"],
+        "self_evaluation_prompt": "Evaluate if the response identifies which UEs are using AI services"
+      }
+    },
+    {
+      "id": "q_015",
+      "difficulty": "hard",
+      "category": "temporal_analysis",
+      "description": "Network performance over time",
+      "static_question": "How has the network performance changed over time?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["performance", "time", "change", "trend"],
+        "self_evaluation_prompt": "Evaluate if the response provides temporal analysis of network performance trends"
+      }
+    },
+    {
+      "id": "q_016",
+      "difficulty": "easy",
+      "category": "edge_computing",
+      "description": "Edge server status query",
+      "static_question": "What is the status of edge servers in the network?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["edge", "server", "status"],
+        "self_evaluation_prompt": "Evaluate if the response accurately describes the status of edge servers"
+      }
+    },
+    {
+      "id": "q_017",
+      "difficulty": "medium",
+      "category": "qos_analysis",
+      "description": "Quality of Service analysis",
+      "static_question": "What is the QoS performance for IMSI_1?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["QoS", "quality", "service", "performance"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate QoS metrics for the specified UE"
+      }
+    },
+    {
+      "id": "q_018",
+      "difficulty": "hard",
+      "category": "security_analysis",
+      "description": "Network security assessment",
+      "static_question": "What security vulnerabilities exist in the current network configuration?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["security", "vulnerability", "threat", "assessment"],
+        "self_evaluation_prompt": "Evaluate if the response identifies security vulnerabilities and provides risk assessment"
+      }
+    },
+    {
+      "id": "q_019",
+      "difficulty": "medium",
+      "category": "handover_analysis",
+      "description": "Handover performance analysis",
+      "static_question": "How many handovers occurred for IMSI_1 in the last hour?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["handover", "IMSI_1", "count", "performance"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate handover statistics for the specified UE"
+      }
+    },
+    {
+      "id": "q_020",
+      "difficulty": "easy",
+      "category": "traffic_analysis",
+      "description": "Network traffic patterns",
+      "static_question": "What are the current traffic patterns in the network?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["traffic", "pattern", "network", "current"],
+        "self_evaluation_prompt": "Evaluate if the response accurately describes current network traffic patterns"
+      }
+    },
+    {
+      "id": "q_021",
+      "difficulty": "hard",
+      "category": "ai_training",
+      "description": "AI model training status",
+      "static_question": "What is the status of AI model training in the network?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["AI", "training", "model", "status"],
+        "self_evaluation_prompt": "Evaluate if the response provides comprehensive information about AI model training status"
+      }
+    },
+    {
+      "id": "q_022",
+      "difficulty": "medium",
+      "category": "network_slicing",
+      "description": "Network slicing configuration",
+      "static_question": "What network slices are currently active?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["slice", "network", "active", "configuration"],
+        "self_evaluation_prompt": "Evaluate if the response lists all active network slices and their configurations"
+      }
+    },
+    {
+      "id": "q_023",
+      "difficulty": "easy",
+      "category": "energy_efficiency",
+      "description": "Energy consumption analysis",
+      "static_question": "What is the energy consumption of base stations?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["energy", "consumption", "base station"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate energy consumption data for base stations"
+      }
+    },
+    {
+      "id": "q_024",
+      "difficulty": "hard",
+      "category": "predictive_analysis",
+      "description": "Predictive maintenance analysis",
+      "static_question": "Which network components need predictive maintenance?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["predictive", "maintenance", "component", "analysis"],
+        "self_evaluation_prompt": "Evaluate if the response identifies components requiring predictive maintenance with supporting analysis"
+      }
+    },
+    {
+      "id": "q_025",
+      "difficulty": "medium",
+      "category": "latency_analysis",
+      "description": "Network latency analysis",
+      "static_question": "What is the average latency for IMSI_1?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["latency", "IMSI_1", "average", "performance"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate latency metrics for the specified UE"
+      }
+    },
+    {
+      "id": "q_026",
+      "difficulty": "easy",
+      "category": "coverage_analysis",
+      "description": "Network coverage assessment",
+      "static_question": "What is the coverage area of BS_001?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["coverage", "BS_001", "area"],
+        "self_evaluation_prompt": "Evaluate if the response accurately describes the coverage area of the specified base station"
+      }
+    },
+    {
+      "id": "q_027",
+      "difficulty": "hard",
+      "category": "capacity_planning",
+      "description": "Network capacity planning",
+      "static_question": "What is the current network capacity and how can it be optimized?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["capacity", "network", "optimization", "planning"],
+        "self_evaluation_prompt": "Evaluate if the response provides comprehensive capacity analysis and optimization recommendations"
+      }
+    },
+    {
+      "id": "q_028",
+      "difficulty": "medium",
+      "category": "interference_analysis",
+      "description": "Interference analysis",
+      "static_question": "Are there any interference issues in the network?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["interference", "issue", "network"],
+        "self_evaluation_prompt": "Evaluate if the response identifies interference issues and their impact"
+      }
+    },
+    {
+      "id": "q_029",
+      "difficulty": "easy",
+      "category": "load_balancing",
+      "description": "Load balancing status",
+      "static_question": "How is load balancing performing across cells?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["load", "balancing", "cell", "performance"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate load balancing performance metrics"
+      }
+    },
+    {
+      "id": "q_030",
+      "difficulty": "hard",
+      "category": "fault_prediction",
+      "description": "Fault prediction analysis",
+      "static_question": "Which network components are likely to fail in the next 24 hours?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["fault", "prediction", "component", "failure"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate fault predictions with supporting evidence"
+      }
+    },
+    {
+      "id": "q_031",
+      "difficulty": "medium",
+      "category": "throughput_analysis",
+      "description": "Throughput performance analysis",
+      "static_question": "What is the throughput performance for different UEs?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["throughput", "performance", "UE"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate throughput metrics for different UEs"
+      }
+    },
+    {
+      "id": "q_032",
+      "difficulty": "easy",
+      "category": "connectivity_status",
+      "description": "Connectivity status check",
+      "static_question": "Which UEs are currently connected to the network?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["connected", "UE", "network", "status"],
+        "self_evaluation_prompt": "Evaluate if the response accurately lists all connected UEs"
+      }
+    },
+    {
+      "id": "q_033",
+      "difficulty": "hard",
+      "category": "resource_optimization",
+      "description": "Resource optimization analysis",
+      "static_question": "How can network resources be optimized for better performance?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["resource", "optimization", "performance", "analysis"],
+        "self_evaluation_prompt": "Evaluate if the response provides comprehensive resource optimization recommendations"
+      }
+    },
+    {
+      "id": "q_034",
+      "difficulty": "medium",
+      "category": "service_quality",
+      "description": "Service quality assessment",
+      "static_question": "What is the service quality for voice calls in the network?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["service", "quality", "voice", "call"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate service quality metrics for voice calls"
+      }
+    },
+    {
+      "id": "q_035",
+      "difficulty": "easy",
+      "category": "bandwidth_usage",
+      "description": "Bandwidth usage analysis",
+      "static_question": "What is the current bandwidth usage across the network?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["bandwidth", "usage", "network", "current"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate bandwidth usage statistics"
+      }
+    },
+    {
+      "id": "q_036",
+      "difficulty": "hard",
+      "category": "anomaly_detection",
+      "description": "Network anomaly detection",
+      "static_question": "Are there any anomalies detected in the network behavior?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["anomaly", "detection", "network", "behavior"],
+        "self_evaluation_prompt": "Evaluate if the response identifies network anomalies with supporting analysis"
+      }
+    },
+    {
+      "id": "q_037",
+      "difficulty": "medium",
+      "category": "mobility_analysis",
+      "description": "UE mobility patterns",
+      "static_question": "What are the mobility patterns of IMSI_1?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["mobility", "pattern", "IMSI_1"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate mobility pattern analysis for the specified UE"
+      }
+    },
+    {
+      "id": "q_038",
+      "difficulty": "easy",
+      "category": "signal_strength",
+      "description": "Signal strength analysis",
+      "static_question": "What is the signal strength for IMSI_1?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["signal", "strength", "IMSI_1"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate signal strength metrics"
+      }
+    },
+    {
+      "id": "q_039",
+      "difficulty": "hard",
+      "category": "predictive_scaling",
+      "description": "Predictive scaling analysis",
+      "static_question": "How should the network scale based on predicted traffic patterns?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["predictive", "scaling", "traffic", "pattern"],
+        "self_evaluation_prompt": "Evaluate if the response provides comprehensive predictive scaling recommendations"
+      }
+    },
+    {
+      "id": "q_040",
+      "difficulty": "medium",
+      "category": "congestion_analysis",
+      "description": "Network congestion analysis",
+      "static_question": "Are there any congested areas in the network?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["congestion", "area", "network"],
+        "self_evaluation_prompt": "Evaluate if the response identifies congested areas and their impact"
+      }
+    },
+    {
+      "id": "q_041",
+      "difficulty": "easy",
+      "category": "power_consumption",
+      "description": "Power consumption analysis",
+      "static_question": "What is the power consumption of IMSI_1?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["power", "consumption", "IMSI_1"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate power consumption data"
+      }
+    },
+    {
+      "id": "q_042",
+      "difficulty": "hard",
+      "category": "machine_learning",
+      "description": "ML model performance analysis",
+      "static_question": "How are machine learning models performing in network optimization?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["machine learning", "model", "optimization", "performance"],
+        "self_evaluation_prompt": "Evaluate if the response provides comprehensive ML model performance analysis"
+      }
+    },
+    {
+      "id": "q_043",
+      "difficulty": "medium",
+      "category": "spectrum_analysis",
+      "description": "Spectrum utilization analysis",
+      "static_question": "What is the spectrum utilization across different cells?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["spectrum", "utilization", "cell"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate spectrum utilization metrics"
+      }
+    },
+    {
+      "id": "q_044",
+      "difficulty": "easy",
+      "category": "connection_quality",
+      "description": "Connection quality assessment",
+      "static_question": "What is the connection quality for IMSI_1?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["connection", "quality", "IMSI_1"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate connection quality metrics"
+      }
+    },
+    {
+      "id": "q_045",
+      "difficulty": "hard",
+      "category": "cognitive_radio",
+      "description": "Cognitive radio analysis",
+      "static_question": "How is cognitive radio technology being utilized in the network?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["cognitive", "radio", "technology", "utilization"],
+        "self_evaluation_prompt": "Evaluate if the response provides comprehensive cognitive radio analysis"
+      }
+    },
+    {
+      "id": "q_046",
+      "difficulty": "medium",
+      "category": "backhaul_analysis",
+      "description": "Backhaul network analysis",
+      "static_question": "What is the status of backhaul connections?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["backhaul", "connection", "status"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate backhaul connection status"
+      }
+    },
+    {
+      "id": "q_047",
+      "difficulty": "easy",
+      "category": "protocol_analysis",
+      "description": "Protocol performance analysis",
+      "static_question": "What protocols are being used by IMSI_1?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["protocol", "IMSI_1", "performance"],
+        "self_evaluation_prompt": "Evaluate if the response accurately identifies protocols used by the specified UE"
+      }
+    },
+    {
+      "id": "q_048",
+      "difficulty": "hard",
+      "category": "virtualization_analysis",
+      "description": "Network virtualization analysis",
+      "static_question": "How is network virtualization affecting performance?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["virtualization", "network", "performance", "impact"],
+        "self_evaluation_prompt": "Evaluate if the response provides comprehensive virtualization impact analysis"
+      }
+    },
+    {
+      "id": "q_049",
+      "difficulty": "medium",
+      "category": "roaming_analysis",
+      "description": "Roaming behavior analysis",
+      "static_question": "What is the roaming behavior of IMSI_1?",
+      "expected_tools": ["get_knowledge"],
+      "expected_agent": "Basic Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["roaming", "behavior", "IMSI_1"],
+        "self_evaluation_prompt": "Evaluate if the response provides accurate roaming behavior analysis"
+      }
+    },
+    {
+      "id": "q_050",
+      "difficulty": "hard",
+      "category": "future_planning",
+      "description": "Future network planning",
+      "static_question": "What infrastructure changes are needed for 5G deployment?",
+      "expected_tools": ["get_knowledge", "get_knowledge_bulk"],
+      "expected_agent": "Advanced Network Knowledge Assistant",
+      "evaluation_criteria": {
+        "should_use_tools": true,
+        "expected_tool_output_contains": ["infrastructure", "5G", "deployment", "planning"],
+        "self_evaluation_prompt": "Evaluate if the response provides comprehensive infrastructure planning recommendations"
+      }
+    }
+  ],
+  "metadata": {
+    "total_questions": 50,
+    "difficulty_distribution": {
+      "easy": 15,
+      "medium": 20,
+      "hard": 15
+    },
+    "category_distribution": {
+      "ue_status": 1,
+      "network_overview": 1,
+      "ai_services": 1,
+      "relationships": 1,
+      "ai_performance": 1,
+      "performance_analysis": 1,
+      "network_analysis": 1,
+      "ric_operations": 1,
+      "xapps": 1,
+      "ric_optimization": 1,
+      "simulation_state": 1,
+      "error_handling": 1,
+      "comparative_analysis": 1,
+      "ai_usage": 1,
+      "temporal_analysis": 1,
+      "edge_computing": 1,
+      "qos_analysis": 1,
+      "security_analysis": 1,
+      "handover_analysis": 1,
+      "traffic_analysis": 1,
+      "ai_training": 1,
+      "network_slicing": 1,
+      "energy_efficiency": 1,
+      "predictive_analysis": 1,
+      "latency_analysis": 1,
+      "coverage_analysis": 1,
+      "capacity_planning": 1,
+      "interference_analysis": 1,
+      "load_balancing": 1,
+      "fault_prediction": 1,
+      "throughput_analysis": 1,
+      "connectivity_status": 1,
+      "resource_optimization": 1,
+      "service_quality": 1,
+      "bandwidth_usage": 1,
+      "anomaly_detection": 1,
+      "mobility_analysis": 1,
+      "signal_strength": 1,
+      "predictive_scaling": 1,
+      "congestion_analysis": 1,
+      "power_consumption": 1,
+      "machine_learning": 1,
+      "spectrum_analysis": 1,
+      "connection_quality": 1,
+      "cognitive_radio": 1,
+      "backhaul_analysis": 1,
+      "protocol_analysis": 1,
+      "virtualization_analysis": 1,
+      "roaming_analysis": 1,
+      "future_planning": 1
+    },
+    "created_date": "2024-01-15",
+    "version": "2.0"
+  }
+} 
