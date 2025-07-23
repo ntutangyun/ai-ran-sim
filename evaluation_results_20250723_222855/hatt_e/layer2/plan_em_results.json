@@ -1,0 +1,11 @@
+{
+  "per_question": [],
+  "aggregate": {
+    "mean_plan_em": null,
+    "mean_llm_score": null,
+    "num_questions": 0,
+    "scores": [],
+    "llm_scores": []
+  },
+  "note": "llm_score is the recommended metric for Plan.EM. plan_em_score is Jaccard similarity between expected_tools and executed_tools."
+}

@@ -1,329 +1,181 @@
-# Dynamic Conversation Evaluator
+# AI RAN Simulation Evaluation Framework
 
-This directory contains the dynamic conversation evaluator for the Network Engineer Chat Agent. The evaluator uses AI to generate realistic multi-turn conversations from static questions and evaluates agent responses based on tool outputs and AI self-evaluation.
+This directory contains a comprehensive, autonomous evaluation framework for multi-agent AI systems in telecom simulation, with full support for HATT-E academic evaluation.
 
-## Files
+---
 
-- `conversation_data.json` - Static questions and evaluation criteria
-- `conversation_evaluator.py` - Main evaluator implementation
-- `test_conversation_evaluator.py` - Test script to demonstrate usage
-- `setup_test.py` - Setup script to check requirements
+## Overview: What Does This Evaluation Do?
 
-## Features
+- **Autonomous Agent Testing:**
+  - `run_evaluation.py` is a fully autonomous agent testing framework.
+  - It uses AI to drive realistic, multi-turn conversations with your agent(s), simulating real-world network engineer queries.
+  - The framework evaluates agent responses using both tool outputs and AI-based self-evaluation, producing detailed logs, scores, and reasoning for every question.
+  - Results are saved in timestamped folders for easy review and comparison.
 
-### 1. Dynamic Conversation Generation
-- Uses AI to generate natural follow-up questions from static questions
-- Creates realistic multi-turn conversations as a network engineer would have
-- Maintains conversation context and flow
+- **Automated Visualization:**
+  - `visualization_engine.py` generates all performance charts and dashboards automatically when run (no arguments needed).
+  - It covers overall performance, difficulty/category breakdowns, tool usage, error handling, metric radar, and more.
+  - The radar chart is now called `metric_radar` for clarity and generality.
 
-### 2. Comprehensive Evaluation
-- Evaluates responses by comparing with actual tool outputs when tools are used
-- Uses AI self-evaluation when no tools are used
-- Provides detailed scoring and reasoning for each response
-- **Improved scoring** - No more generic 0.5 scores, provides specific detailed evaluations
+# HATT-E Evaluation Framework: README
 
-### 3. Detailed Logging
-- **Individual conversation logs** - Each question gets its own detailed log file
-- **Complete conversation tracking** - Logs every turn, tool usage, and response
-- **Debugging information** - Easy to understand what happened in each conversation
+## What is HATT-E?
+HATT-E (Hierarchical Agent Task and Tool Evaluation) is a comprehensive, multi-layered evaluation framework for multi-agent AI systems, designed for complex agentic environments. It provides both quantitative and qualitative metrics to assess the performance, reliability, and reasoning of AI agents at different levels of orchestration and specialization.
 
-### 4. Organized Results
-- **Timestamped folders** - Results saved in folders with current timestamp
-- **Multiple output formats** - JSON reports, summary files, and text logs
-- **Easy analysis** - All results organized for easy review
+---
 
-### 5. Simulation Integration
-- **Proper simulation initialization** - Starts simulation like the frontend does
-- **Real network state** - Evaluates against actual running simulation
-- **Knowledge layer integration** - Uses real knowledge router and tools
+## Why HATT-E?
+Modern AI systems often use multiple agents (orchestrators, specialists, tool-users) to solve complex tasks. Evaluating such systems requires more than just task success rates—it requires understanding how well the system decomposes tasks, delegates, executes, and collaborates. HATT-E provides a structured, academic approach to this evaluation.
 
-## How to Test
+---
 
-### Prerequisites
+## HATT-E Layers Overview
 
-1. Make sure you have the required dependencies installed:
+### **Layer 1: Orchestration/Decomposition**
+- **What:** Evaluates the top-level agent (orchestrator/planner) on how well it understands user intent, decomposes tasks, and delegates to specialists.
+- **Why:** The quality of decomposition and delegation directly impacts the system's ability to solve complex, multi-step problems.
+- **Metrics Implemented:**
+  - **Decomposition Quality Score (DQS):** Logical coherence, completeness, and efficiency of the plan.
+  - **Delegation Accuracy:** Did the orchestrator assign sub-tasks to the correct specialists/tools?
+  - **Failure Mode Tagging:** Identifies common orchestration errors (e.g., missing steps, wrong delegation).
+- **What we've done:**
+  - Automated extraction and scoring of decomposition plans.
+  - Aggregated all Layer 1 results and visualizations in a consistent output structure.
+  - Robust error handling and clear reporting.
+
+### **Layer 2: Specialist/Tool Proficiency**
+- **What:** Evaluates the specialist agents and tool-using agents on how well they execute the plan, use tools, and avoid errors like hallucination.
+- **Why:** Even a perfect plan fails if the specialists/tools do not execute it correctly. Layer 2 measures the system's ability to follow through on the orchestrator's intent.
+- **Key Metrics Implemented:**
+  - **Plan.EM (Plan Execution Match):**
+    - Compares the orchestrator's intended tool usage (from the plan) to the actual tool calls made during execution.
+    - Uses both heuristic (Jaccard similarity) and LLM-based scoring for robust evaluation.
+    - Provides detailed reasoning for each score.
+  - **Act.EM (Action Execution Match):**
+    - Compares the planned tools (from `expected_tools`) to the tools actually used (`tools_used`) for each question.
+    - Uses Jaccard similarity and provides clear reasoning for each score.
+    - Answers: "Did the system actually perform the actions it was supposed to?"
+- **What we've done:**
+  - Automated extraction and scoring for both Plan.EM and Act.EM.
+  - Always use LLM for Plan.EM for interpretability and robustness.
+  - Output per-question and aggregate results, with clear reasoning and summary statistics.
+
+---
+
+## Why is Layer 2 Important?
+- **Bridges the gap between planning and execution.**
+- **Identifies breakdowns:** If Layer 1 is perfect but Layer 2 is poor, the problem is in execution, not planning.
+- **Academic rigor:** Provides fine-grained, explainable metrics for research and engineering improvement.
+
+---
+
+## How to Use This Evaluation
+1. **Run the evaluation scripts:**
+   - Layer 1 and Layer 2 can be run independently via CLI.
+   - Results are saved in structured JSON files for further analysis or visualization.
+2. **Interpret the results:**
+   - Use the reasoning fields to understand why scores were given.
+   - Aggregate metrics help identify systemic strengths and weaknesses.
+
+---
+
+## Summary Table
+| Layer   | Metric         | What it Measures                                 | How it's Scored         |
+|---------|---------------|--------------------------------------------------|-------------------------|
+| Layer 1 | DQS           | Plan quality (coherence, completeness, efficiency)| LLM/heuristic           |
+| Layer 1 | Delegation    | Correctness of sub-task assignment               | Heuristic/LLM           |
+| Layer 2 | Plan.EM       | Match between planned and executed tool usage    | Jaccard + LLM           |
+| Layer 2 | Act.EM        | Match between planned and actual actions         | Jaccard + Reasoning     |
+
+---
+
+## For More Information
+- See the code in `hatt_e_metrics.py` for implementation details.
+- All results and reasoning are saved in the `hatt_e/layer1/` and `hatt_e/layer2/` output folders.
+- For academic citation or further reading, see the research papers related to HATT-E framework or contact the project maintainers. 
+---
+
+## Setup Instructions
+
+1. **Create a virtual environment:**
+   ```bash
+   python3 -m venv backend/.venv
+   source backend/.venv/bin/activate
+   ```
+2. **Install dependencies:**
 ```bash
-pip install -r requirements.txt
+   pip install -r backend/requirements.txt
 ```
-
-2. Set up your OpenAI API key:
+3. **Set your OpenAI API key:**
 ```bash
 export OPENAI_API_KEY="your-api-key-here"
 ```
 
-3. Ensure the backend simulation is running or the knowledge layer is properly initialized.
+---
 
-### Running the Tests
+## How to Use
 
-#### Option 1: Run the Test Script
+### 1. Run the Autonomous Evaluation
 ```bash
-cd backend/evaluation
-python test_conversation_evaluator.py
+python backend/evaluation/run_evaluation.py
 ```
+- This will:
+  - Initialize the simulation and agents
+  - Run dynamic, AI-driven conversations for all questions in `conversation_data.json`
+  - Evaluate every response, log all tool usage, and save detailed results in a new `evaluation_results_YYYYMMDD_HHMMSS/` folder
 
-This will run:
-1. **Simulation initialization test** - Verifies simulation starts properly
-2. **Conversation generation test** - Shows how AI creates dynamic conversations
-3. **Single question evaluation** - Tests one question with full evaluation and logging
-4. **Comprehensive evaluation** - Runs all 15 questions and generates organized reports
-
-#### Option 2: Run Individual Components
-
-**Test simulation initialization:**
-```python
-from conversation_evaluator import DynamicConversationEvaluator
-import asyncio
-
-async def test():
-    evaluator = DynamicConversationEvaluator()
-    evaluator._initialize_simulation()
-    print("Simulation initialized successfully")
-
-asyncio.run(test())
-```
-
-**Test conversation generation:**
-```python
-from conversation_evaluator import DynamicConversationEvaluator
-import asyncio
-
-async def test():
-    evaluator = DynamicConversationEvaluator()
-    conversation = await evaluator.generate_dynamic_conversation(
-        "What is the current status of user equipment UE_001?"
-    )
-    print(conversation)
-
-asyncio.run(test())
-```
-
-**Test single question evaluation:**
-```python
-from conversation_evaluator import DynamicConversationEvaluator
-import asyncio
-
-async def test():
-    evaluator = DynamicConversationEvaluator()
-    
-    # Initialize simulation first
-    evaluator._initialize_simulation()
-    
-    test_question = {
-        "id": "test_001",
-        "difficulty": "easy",
-        "category": "ue_status",
-        "static_question": "What is the current status of user equipment UE_001?",
-        "expected_tools": ["get_knowledge"],
-        "evaluation_criteria": {
-            "should_use_tools": True,
-            "expected_tool_output_contains": ["UE_001", "status"],
-            "self_evaluation_prompt": "Evaluate if the response accurately describes UE_001's status"
-        }
-    }
-    
-    result = await evaluator.run_conversation_evaluation(test_question)
-    print(f"Score: {result.evaluation_score}")
-    print(f"Reasoning: {result.evaluation_reasoning}")
-    
-    # Save conversation log
-    with open("test_conversation.log", "w") as f:
-        f.write(result.conversation_log)
-
-asyncio.run(test())
-```
-
-**Run comprehensive evaluation:**
-```python
-from conversation_evaluator import DynamicConversationEvaluator
-import asyncio
-
-async def test():
-    evaluator = DynamicConversationEvaluator()
-    results = await evaluator.run_comprehensive_evaluation()
-    print(f"Average Score: {results['average_score']}")
-
-asyncio.run(test())
-```
-
-### Option 3: Command Line Interface
-
-Run the evaluator directly with command line arguments:
-
+### 2. Generate All Visualizations
 ```bash
-cd backend/evaluation
-python conversation_evaluator.py --output-dir my_results --conversation-data conversation_data.json
+python backend/evaluation/visualization_engine.py evaluation_results_YYYYMMDD_HHMMSS
 ```
+- This will:
+  - Automatically generate all charts and dashboards (no arguments needed)
+  - Save plots (including `metric_radar.png`) in the results folder
+
+### 3. (Optional) Run HATT-E Metrics
+```bash
+python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS
+```
+- Computes HATT-E Layer 1 and (as implemented) Layer 2 metrics, with visualizations.
+
+---
+
+## HATT-E Evaluation: Layers Explained
+
+- **Layer 1: Orchestration/Decomposition**
+  - Evaluates how well the orchestrator agent breaks down user requests, delegates to specialists/tools, and handles failure modes.
+  - Metrics: Decomposition Quality Score (DQS), Delegation Accuracy, Failure Mode Tagging
+  - Outputs: Per-question and aggregate stats, DQS histograms, delegation accuracy plots, failure mode barplots
+
+- **Layer 2: Specialist/Tool**
+  - Evaluates how well specialist agents/tools execute the orchestrator’s plan and produce correct results.
+  - Metrics: Plan Execution Match (Plan.EM), Action Execution Match (Act.EM), Tool Success Rate (TSR), Hallucination Rate
+  - Outputs: (Planned) Per-question and aggregate stats, visualizations
+
+- **Layer 3: System/Collaboration**
+  - (Planned) Evaluates overall system performance, collaboration, user outcomes, and task success.
+  - Metrics: Task Success Rate, Response Quality, Cost, Latency, Turn Count, Consistency, etc.
+
+---
 
 ## Output Structure
 
-After running the evaluation, you'll find a timestamped folder (e.g., `evaluation_results_20240115_143022/`) containing:
+- `evaluation_results_YYYYMMDD_HHMMSS/`
+  - `conversation_q_XXX.log` — Full logs for each question
+  - `dynamic_conversation_evaluation_*.json` — Detailed evaluation results
+  - `evaluation_summary_*.json` — High-level summary
+  - Plots: `overall_performance.png`, `metric_radar.png`, etc.
+  - HATT-E metrics: `hatt_e_layer1_aggregated.json`, etc.
 
-### Files Generated
+---
 
-1. **Individual conversation logs** - `conversation_q_001.log`, `conversation_q_002.log`, etc.
-   - Detailed logs for each question showing the full conversation flow
-   - Tool usage and outputs
-   - Evaluation reasoning
+## Customization & Extension
+- **Edit questions:** Modify `conversation_data.json`.
+- **Add metrics:** Extend `hatt_e_metrics.py` or `visualization_engine.py`.
+- **Layer 3:** Placeholder for future system-level evaluation.
 
-2. **Comprehensive evaluation report** - `dynamic_conversation_evaluation_YYYYMMDD_HHMMSS.json`
-   - Complete evaluation results with all details
-   - Individual scores and reasoning for each question
+---
 
-3. **Summary report** - `evaluation_summary_YYYYMMDD_HHMMSS.json`
-   - High-level statistics and scores by category/difficulty
-
-4. **All conversation logs** - `all_conversation_logs_YYYYMMDD_HHMMSS.txt`
-   - Combined log file with all conversations for easy review
-
-### Sample Output Structure
-
-```
-evaluation_results_20240115_143022/
-├── conversation_q_001.log
-├── conversation_q_002.log
-├── conversation_q_003.log
-├── ...
-├── dynamic_conversation_evaluation_20240115_143022.json
-├── evaluation_summary_20240115_143022.json
-└── all_conversation_logs_20240115_143022.txt
-```
-
-### Sample Conversation Log
-
-```
-=== CONVERSATION LOG FOR q_001 ===
-Timestamp: 2024-01-15T14:30:22.123456
-Static Question: What is the current status of user equipment UE_001?
-
-DYNAMIC CONVERSATION:
-Turn 1: What is the current status of user equipment UE_001?
-Turn 2: Can you also tell me about its connection quality and which cell it's connected to?
-Turn 3: What about its performance metrics?
-
-AGENT RESPONSE:
-Based on the current simulation state, UE_001 is connected to cell BS_001_Cell_1...
-
-TOOLS USED: ['get_knowledge']
-
-TOOL OUTPUTS:
-get_knowledge: {"ue_id": "UE_001", "status": "connected", "cell": "BS_001_Cell_1"}
-
-RESPONSE TIME: 2.34s
-EVALUATION SCORE: 0.85
-EVALUATION REASONING:
-The agent correctly used the get_knowledge tool and provided accurate information...
-
-=== END LOG ===
-```
-
-### Sample Summary Report
-
-```json
-{
-  "evaluation_timestamp": "2024-01-15T14:30:22",
-  "total_questions": 15,
-  "average_score": 0.82,
-  "average_response_time": 2.1,
-  "difficulty_scores": {
-    "easy": 0.88,
-    "medium": 0.81,
-    "hard": 0.76
-  },
-  "category_scores": {
-    "ue_status": 0.90,
-    "network_overview": 0.88,
-    "ai_services": 0.85
-  },
-  "tool_usage_stats": {
-    "get_knowledge": 12,
-    "get_knowledge_bulk": 8
-  }
-}
-```
-
-## Key Improvements
-
-### 1. **Detailed Logging**
-- Each question gets its own log file
-- Complete conversation flow tracking
-- Tool usage and outputs logged
-- Evaluation reasoning preserved
-
-### 2. **Organized Results**
-- Timestamped folders for each evaluation run
-- Multiple output formats for different analysis needs
-- Easy to track progress and compare results
-
-### 3. **Simulation Integration**
-- Proper simulation initialization like the frontend
-- Real network state for more accurate evaluation
-- Knowledge layer properly integrated
-
-## Customizing Questions
-
-To add or modify questions, edit `conversation_data.json`:
-
-```json
-{
-  "id": "q_new",
-  "difficulty": "medium",
-  "category": "custom_category",
-  "description": "Your question description",
-  "static_question": "Your question here?",
-  "expected_tools": ["get_knowledge"],
-  "expected_agent": "Basic Network Knowledge Assistant",
-  "evaluation_criteria": {
-    "should_use_tools": true,
-    "expected_tool_output_contains": ["expected", "keywords"],
-    "self_evaluation_prompt": "Your evaluation prompt"
-  }
-}
-```
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Import Errors**: Make sure you're running from the correct directory and the backend modules are accessible.
-
-2. **API Key Issues**: Ensure your OpenAI API key is set correctly:
-```bash
-export OPENAI_API_KEY="your-key-here"
-```
-
-3. **Simulation Issues**: The evaluator now properly initializes simulation. If you get simulation errors, check that all backend dependencies are installed.
-
-4. **Memory Issues**: For large evaluations, consider running fewer questions at a time or increasing your system's memory allocation.
-
-### Debug Mode
-
-To see detailed logging, set the log level:
-
-```python
-import logging
-logging.basicConfig(level=logging.DEBUG)
-```
-
-## Evaluation Metrics
-
-The evaluator provides several metrics:
-
-- **Accuracy Score**: How well the response matches expected tool outputs
-- **Tool Usage**: Whether the agent used appropriate tools
-- **Response Time**: How quickly the agent responds
-- **Completeness**: Whether the response addresses the full question
-- **Clarity**: How clear and understandable the response is
-
-## Extending the Evaluator
-
-To add new evaluation criteria or modify the evaluation logic:
-
-1. Edit the `_create_evaluation_ai()` method in `conversation_evaluator.py`
-2. Modify the evaluation prompts to include your new criteria
-3. Update the score parsing logic if needed
-
-To add new conversation generation patterns:
-
-1. Edit the `_create_conversation_ai()` method
-2. Modify the conversation generation prompts
-3. Update the conversation parsing logic if needed 
+## Questions?
+- See code comments and docstrings for details.
+- For academic use, cite the HATT-E framework and this repository. 

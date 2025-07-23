@@ -54,7 +54,7 @@ async def main():
             latest_dir = max(output_dirs, key=os.path.getctime)
             print(f"\n📁 Results saved to: {latest_dir}")
             print(f"📄 Check the following files:")
-            print(f"   - Individual conversation logs: conversation_*.log")
+            print(f"   - Individual conversation logs: individual_conversation_logs/conversation_*.log")
             print(f"   - Complete evaluation: dynamic_conversation_evaluation_*.json")
             print(f"   - Summary report: evaluation_summary_*.json")
             print(f"   - All logs combined: all_conversation_logs_*.txt")

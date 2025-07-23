@@ -20,6 +20,44 @@ class VisualizationEngine:
         self.metrics_data = None
         self.load_evaluation_data()
 
+    def plot_metric_radar(self):
+        """Generate and save a radar chart of key evaluation metrics."""
+        if self.metrics_data is None or self.metrics_data.empty:
+            print("No evaluation data loaded.")
+            return
+        self.calculate_enhanced_metrics()
+        import matplotlib.pyplot as plt
+        import numpy as np
+        import os
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
+        academic_metrics = [
+            'consistency_score', 'tool_selection_accuracy', 'context_retention_score',
+            'knowledge_integration_score', 'reasoning_quality_score', 'adaptability_score',
+            'confidence_calibration_score'
+        ]
+        avg_scores = []
+        for metric in academic_metrics:
+            if metric in self.metrics_data.columns:
+                avg_scores.append(self.metrics_data[metric].mean())
+            else:
+                avg_scores.append(0.0)
+        angles = np.linspace(0, 2 * np.pi, len(academic_metrics), endpoint=False).tolist()
+        avg_scores += avg_scores[:1]
+        angles += angles[:1]
+        fig, ax = plt.subplots(figsize=(10, 8), subplot_kw=dict(projection='polar'))
+        ax.plot(angles, avg_scores, 'o-', linewidth=2, color='blue')
+        ax.fill(angles, avg_scores, alpha=0.25, color='blue')
+        ax.set_xticks(angles[:-1])
+        ax.set_xticklabels([m.replace('_', ' ').title() for m in academic_metrics])
+        ax.set_ylim(0, 1)
+        ax.set_title('Metric Radar Chart', size=16, pad=20)
+        plt.tight_layout()
+        out_path = os.path.join(vis_dir, 'metric_radar.png')
+        plt.savefig(out_path)
+        plt.close()
+        print(f"Saved metric radar chart to {out_path}")
+
     def load_evaluation_data(self):
         """Load evaluation results from the latest JSON file in the directory."""
         json_files = glob.glob(os.path.join(self.results_dir, "dynamic_conversation_evaluation_*.json"))
@@ -47,6 +85,9 @@ class VisualizationEngine:
             print("No evaluation data loaded.")
             return
         import matplotlib.pyplot as plt
+        import os
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
         avg_score = self.metrics_data['evaluation_score'].mean()
         plt.figure(figsize=(6, 4))
         plt.bar(['Average Score'], [avg_score], color='skyblue')
@@ -55,7 +96,7 @@ class VisualizationEngine:
         plt.title('Overall Agent Performance')
         plt.text(0, avg_score + 0.02, f"{avg_score:.2f}", ha='center', va='bottom', fontsize=12)
         plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'overall_performance.png')
+        out_path = os.path.join(vis_dir, 'overall_performance.png')
         plt.savefig(out_path)
         plt.close()
         print(f"Saved overall performance chart to {out_path}") 
@@ -66,6 +107,9 @@ class VisualizationEngine:
             print("No evaluation data loaded.")
             return
         import matplotlib.pyplot as plt
+        import os
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
         diff_scores = self.metrics_data.groupby('difficulty')['evaluation_score'].mean()
         diff_scores_dict = diff_scores.to_dict()
         keys = [str(k) for k in diff_scores_dict.keys()]
@@ -77,7 +121,7 @@ class VisualizationEngine:
         plt.title('Performance by Difficulty')
         plt.xticks(rotation=0)
         plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'performance_by_difficulty.png')
+        out_path = os.path.join(vis_dir, 'performance_by_difficulty.png')
         plt.savefig(out_path)
         plt.close()
         print(f"Saved performance by difficulty chart to {out_path}") 
@@ -88,6 +132,9 @@ class VisualizationEngine:
             print("No evaluation data loaded.")
             return
         import matplotlib.pyplot as plt
+        import os
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
         cat_scores = self.metrics_data.groupby('category')['evaluation_score'].mean()
         cat_scores_dict = cat_scores.to_dict()
         keys = [str(k) for k in cat_scores_dict.keys()]
@@ -99,7 +146,7 @@ class VisualizationEngine:
         plt.title('Performance by Category')
         plt.xticks(rotation=30, ha='right')
         plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'performance_by_category.png')
+        out_path = os.path.join(vis_dir, 'performance_by_category.png')
         plt.savefig(out_path)
         plt.close()
         print(f"Saved performance by category chart to {out_path}") 
@@ -110,6 +157,9 @@ class VisualizationEngine:
             print("No evaluation data loaded.")
             return
         import matplotlib.pyplot as plt
+        import os
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
         # Flatten the list of tools used per question
         all_tools = []
         for tools in self.metrics_data['tools_used']:
@@ -125,7 +175,7 @@ class VisualizationEngine:
         plt.title('Tool Usage Analysis')
         plt.xticks(rotation=30, ha='right')
         plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'tool_usage_analysis.png')
+        out_path = os.path.join(vis_dir, 'tool_usage_analysis.png')
         plt.savefig(out_path)
         plt.close()
         print(f"Saved tool usage analysis chart to {out_path}") 
@@ -136,6 +186,9 @@ class VisualizationEngine:
             print("No evaluation data loaded.")
             return
         import matplotlib.pyplot as plt
+        import os
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
         response_times = self.metrics_data['response_time'].dropna().astype(float)
         plt.figure(figsize=(8, 4))
         plt.hist(response_times, bins=10, color='orange', edgecolor='black', alpha=0.7)
@@ -143,7 +196,7 @@ class VisualizationEngine:
         plt.ylabel('Count')
         plt.title('Response Time Distribution')
         plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'response_time_histogram.png')
+        out_path = os.path.join(vis_dir, 'response_time_histogram.png')
         plt.savefig(out_path)
         plt.close()
         print(f"Saved response time histogram to {out_path}") 
@@ -154,6 +207,9 @@ class VisualizationEngine:
             print("No evaluation data loaded.")
             return
         import matplotlib.pyplot as plt
+        import os
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
         # Calculate error handling effectiveness (simplified metric)
         error_handling_scores = []
         for _, row in self.metrics_data.iterrows():
@@ -176,7 +232,7 @@ class VisualizationEngine:
         plt.title('Error Handling Effectiveness Distribution')
         plt.xticks([0.25, 0.75], ['Poor', 'Good'])
         plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'error_handling_effectiveness.png')
+        out_path = os.path.join(vis_dir, 'error_handling_effectiveness.png')
         plt.savefig(out_path)
         plt.close()
         print(f"Saved error handling effectiveness chart to {out_path}")
@@ -188,6 +244,9 @@ class VisualizationEngine:
             return
         import matplotlib.pyplot as plt
         import seaborn as sns
+        import os
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
         # Select numeric columns for correlation
         numeric_columns = self.metrics_data.select_dtypes(include=['number']).columns
         correlation_matrix = self.metrics_data[numeric_columns].corr()
@@ -196,7 +255,7 @@ class VisualizationEngine:
                    square=True, linewidths=0.5, cbar_kws={"shrink": .8})
         plt.title('Metric Correlation Analysis', fontsize=16, fontweight='bold')
         plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'correlation_analysis.png')
+        out_path = os.path.join(vis_dir, 'correlation_analysis.png')
         plt.savefig(out_path)
         plt.close()
         print(f"Saved correlation analysis to {out_path}")
@@ -208,6 +267,9 @@ class VisualizationEngine:
             import plotly.graph_objects as go
             import plotly.express as px
             from plotly.subplots import make_subplots
+            import os
+            vis_dir = os.path.join(self.results_dir, 'visualization')
+            os.makedirs(vis_dir, exist_ok=True)
             # Create subplots for different sections
             fig = make_subplots(
                 rows=3, cols=2,
@@ -217,20 +279,10 @@ class VisualizationEngine:
                     'Response Time Analysis', 'Error Analysis'
                 )
             )
-            # Overall score indicator
+            # Use a bar for overall score instead of indicator
             overall_score = self.metrics_data['evaluation_score'].mean()
             fig.add_trace(
-                go.Indicator(
-                    mode="gauge+number+delta",
-                    value=overall_score * 100,
-                    domain={'x': [0, 1], 'y': [0, 1]},
-                    title={'text': "Overall Score (%)"},
-                    gauge={'axis': {'range': [None, 100]},
-                           'bar': {'color': "darkblue"},
-                           'steps': [{'range': [0, 50], 'color': "lightgray"},
-                                    {'range': [50, 80], 'color': "yellow"},
-                                    {'range': [80, 100], 'color': "green"}]}
-                ),
+                go.Bar(x=['Average Score'], y=[overall_score], marker_color='darkblue', name='Average Score'),
                 row=1, col=1
             )
             # Performance by difficulty
@@ -288,60 +340,13 @@ class VisualizationEngine:
             # Update layout
             fig.update_layout(height=1200, width=1000, title_text="Comprehensive AI Agent Evaluation Dashboard")
             # Save the dashboard
-            dashboard_file = os.path.join(self.results_dir, "comprehensive_dashboard.html")
+            dashboard_file = os.path.join(vis_dir, "comprehensive_dashboard.html")
             fig.write_html(dashboard_file)
             print(f"✅ Dashboard saved to: {dashboard_file}")
             return fig
-        except ImportError:
-            print("Plotly not available, skipping interactive dashboard. Install with: pip install plotly")
+        except Exception as e:
+            print(f"Error creating comprehensive dashboard: {e}")
             return None
-
-    def plot_academic_metrics_radar(self):
-        """Generate and save a radar chart of academic metrics."""
-        if self.metrics_data is None or self.metrics_data.empty:
-            print("No evaluation data loaded.")
-            return
-        
-        # Calculate enhanced metrics first
-        self.calculate_enhanced_metrics()
-        
-        import matplotlib.pyplot as plt
-        import numpy as np
-        
-        # Academic metrics to display
-        academic_metrics = [
-            'consistency_score', 'tool_selection_accuracy', 'context_retention_score',
-            'knowledge_integration_score', 'reasoning_quality_score', 'adaptability_score',
-            'confidence_calibration_score'
-        ]
-        
-        # Calculate average scores
-        avg_scores = []
-        for metric in academic_metrics:
-            if metric in self.metrics_data.columns:
-                avg_scores.append(self.metrics_data[metric].mean())
-            else:
-                avg_scores.append(0.0)
-        
-        # Create radar chart
-        angles = np.linspace(0, 2 * np.pi, len(academic_metrics), endpoint=False).tolist()
-        avg_scores += avg_scores[:1]  # Close the loop
-        angles += angles[:1]
-        
-        fig, ax = plt.subplots(figsize=(10, 8), subplot_kw=dict(projection='polar'))
-        ax.plot(angles, avg_scores, 'o-', linewidth=2, color='blue')
-        ax.fill(angles, avg_scores, alpha=0.25, color='blue')
-        
-        ax.set_xticks(angles[:-1])
-        ax.set_xticklabels([m.replace('_', ' ').title() for m in academic_metrics])
-        ax.set_ylim(0, 1)
-        ax.set_title('Academic Metrics Radar Chart', size=16, pad=20)
-        
-        plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'academic_metrics_radar.png')
-        plt.savefig(out_path)
-        plt.close()
-        print(f"Saved academic metrics radar chart to {out_path}")
 
     def plot_network_metrics_heatmap(self):
         """Generate and save a heatmap of network-specific metrics."""
@@ -354,6 +359,9 @@ class VisualizationEngine:
         
         import matplotlib.pyplot as plt
         import seaborn as sns
+        import os
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
         
         # Network-specific metrics
         network_metrics = [
@@ -375,7 +383,7 @@ class VisualizationEngine:
         sns.heatmap(heatmap_data, annot=True, cmap='YlOrRd', fmt='.2f', cbar_kws={"shrink": .8})
         plt.title('Network-Specific Metrics Heatmap', fontsize=16, fontweight='bold')
         plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'network_metrics_heatmap.png')
+        out_path = os.path.join(vis_dir, 'network_metrics_heatmap.png')
         plt.savefig(out_path)
         plt.close()
         print(f"Saved network metrics heatmap to {out_path}")
@@ -385,47 +393,45 @@ class VisualizationEngine:
         if self.metrics_data is None or self.metrics_data.empty:
             print("No evaluation data loaded.")
             return
-        
-        # Calculate enhanced metrics first
         self.calculate_enhanced_metrics()
-        
         import matplotlib.pyplot as plt
-        
-        # Semantic analysis metrics
+        import os
+        # Ensure visualization directory exists
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
         semantic_metrics = [
             'semantic_similarity_score', 'factual_consistency_score',
             'logical_coherence_score', 'domain_expertise_score'
         ]
-        
-        # Filter available metrics
         available_metrics = [m for m in semantic_metrics if m in self.metrics_data.columns]
-        
         if not available_metrics:
             print("No semantic metrics available.")
             return
-        
-        # Calculate average scores
         avg_scores = [self.metrics_data[m].mean() for m in available_metrics]
         metric_names = [m.replace('_', ' ').title() for m in available_metrics]
-        
-        # Create bar chart
-        plt.figure(figsize=(10, 6))
-        bars = plt.bar(metric_names, avg_scores, color=['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728'])
-        plt.ylim(0, 1)
-        plt.ylabel('Average Score')
-        plt.title('Semantic Analysis Metrics')
-        plt.xticks(rotation=45, ha='right')
-        
-        # Add value labels on bars
-        for bar, score in zip(bars, avg_scores):
-            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
-                    f'{score:.2f}', ha='center', va='bottom')
-        
-        plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'semantic_analysis.png')
-        plt.savefig(out_path)
-        plt.close()
-        print(f"Saved semantic analysis chart to {out_path}")
+        base_colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
+        try:
+            plt.figure(figsize=(10, 6))
+            if len(metric_names) == 1:
+                bars = plt.bar(metric_names, avg_scores, color=base_colors[0])
+            else:
+                color_list = (base_colors * ((len(metric_names) + len(base_colors) - 1) // len(base_colors)))[:len(metric_names)]
+                bars = plt.bar(metric_names, avg_scores, color=color_list)
+            plt.ylim(0, 1)
+            plt.ylabel('Average Score')
+            plt.title('Semantic Analysis Metrics')
+            plt.xticks(rotation=45, ha='right')
+            for bar, score in zip(bars, avg_scores):
+                plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
+                        f'{score:.2f}', ha='center', va='bottom')
+            plt.tight_layout()
+            out_path = os.path.join(vis_dir, 'semantic_analysis.png')
+            plt.savefig(out_path)
+            plt.close()
+            print(f"Saved semantic analysis chart to {out_path}")
+        except Exception as e:
+            print(f"Error plotting semantic analysis: {e}")
+            print(f"metric_names: {metric_names}")
 
     def plot_metric_comparison_matrix(self):
         """Generate and save a comparison matrix of all metrics."""
@@ -438,6 +444,9 @@ class VisualizationEngine:
         
         import matplotlib.pyplot as plt
         import seaborn as sns
+        import os
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
         
         # All metrics to compare
         all_metrics = [
@@ -465,7 +474,7 @@ class VisualizationEngine:
                    square=True, linewidths=0.5, cbar_kws={"shrink": .8}, fmt='.2f')
         plt.title('Metric Comparison Matrix', fontsize=16, fontweight='bold')
         plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'metric_comparison_matrix.png')
+        out_path = os.path.join(vis_dir, 'metric_comparison_matrix.png')
         plt.savefig(out_path)
         plt.close()
         print(f"Saved metric comparison matrix to {out_path}")
@@ -475,12 +484,11 @@ class VisualizationEngine:
         if self.metrics_data is None or self.metrics_data.empty:
             print("No evaluation data loaded.")
             return
-        
-        # Calculate enhanced metrics first
         self.calculate_enhanced_metrics()
-        
         import matplotlib.pyplot as plt
-        
+        import os
+        vis_dir = os.path.join(self.results_dir, 'visualization')
+        os.makedirs(vis_dir, exist_ok=True)
         # Extract question numbers for x-axis
         question_ids = self.metrics_data['question_id'].tolist()
         question_numbers = []
@@ -490,10 +498,8 @@ class VisualizationEngine:
                 question_numbers.append(num)
             except:
                 question_numbers.append(len(question_numbers) + 1)
-        
         # Create subplots
         fig, axes = plt.subplots(2, 2, figsize=(15, 10))
-        
         # Overall score trend
         axes[0, 0].plot(question_numbers, self.metrics_data['evaluation_score'], 
                         marker='o', linewidth=2, markersize=6)
@@ -501,7 +507,6 @@ class VisualizationEngine:
         axes[0, 0].set_xlabel('Question Number')
         axes[0, 0].set_ylabel('Evaluation Score')
         axes[0, 0].grid(True, alpha=0.3)
-        
         # Response time trend
         axes[0, 1].plot(question_numbers, self.metrics_data['response_time'], 
                         marker='s', linewidth=2, markersize=6, color='orange')
@@ -509,7 +514,6 @@ class VisualizationEngine:
         axes[0, 1].set_xlabel('Question Number')
         axes[0, 1].set_ylabel('Response Time (seconds)')
         axes[0, 1].grid(True, alpha=0.3)
-        
         # Tool usage trend
         tool_counts = [len(tools) if isinstance(tools, list) else 0 for tools in self.metrics_data['tools_used']]
         axes[1, 0].plot(question_numbers, tool_counts, 
@@ -518,7 +522,6 @@ class VisualizationEngine:
         axes[1, 0].set_xlabel('Question Number')
         axes[1, 0].set_ylabel('Number of Tools Used')
         axes[1, 0].grid(True, alpha=0.3)
-        
         # Consistency trend (if available)
         if 'consistency_score' in self.metrics_data.columns:
             axes[1, 1].plot(question_numbers, self.metrics_data['consistency_score'], 
@@ -536,9 +539,8 @@ class VisualizationEngine:
                 axes[1, 1].set_xlabel('Question Number')
                 axes[1, 1].set_ylabel('Domain Expertise Score')
                 axes[1, 1].grid(True, alpha=0.3)
-        
         plt.tight_layout()
-        out_path = os.path.join(self.results_dir, 'performance_trends.png')
+        out_path = os.path.join(vis_dir, 'performance_trends.png')
         plt.savefig(out_path)
         plt.close()
         print(f"Saved performance trends to {out_path}")
@@ -551,7 +553,7 @@ class VisualizationEngine:
         self.calculate_enhanced_metrics()
         
         # Generate all enhanced visualizations
-        self.plot_academic_metrics_radar()
+        self.plot_metric_radar()
         self.plot_network_metrics_heatmap()
         self.plot_semantic_analysis()
         self.plot_metric_comparison_matrix()
@@ -999,69 +1001,14 @@ class VisualizationEngine:
         
         return (difficulty_score + tool_score) / 2
 
-def main():
-    """CLI entry point for the visualization engine."""
-    import argparse
-    parser = argparse.ArgumentParser(description="Generate evaluation charts from results")
-    parser.add_argument("results_dir", help="Directory containing evaluation results")
-    parser.add_argument("--all", action="store_true", help="Generate all charts (basic + enhanced)")
-    parser.add_argument("--basic", action="store_true", help="Generate basic charts only")
-    parser.add_argument("--enhanced", action="store_true", help="Generate enhanced academic dashboard")
-    parser.add_argument("--academic", action="store_true", help="Generate academic metrics charts only")
-    parser.add_argument("--dashboard", action="store_true", help="Generate interactive dashboard")
-    parser.add_argument("--summary", action="store_true", help="Show data summary")
-    args = parser.parse_args()
-    
-    try:
-        viz_engine = VisualizationEngine(args.results_dir)
-        
-        if args.summary:
-            viz_engine.summarize_data()
-        
-        if args.all:
-            viz_engine.generate_all_charts()
-        elif args.basic:
-            print("🎨 Generating basic charts...")
-            viz_engine.plot_overall_performance()
-            viz_engine.plot_performance_by_difficulty()
-            viz_engine.plot_performance_by_category()
-            viz_engine.plot_tool_usage_analysis()
-            viz_engine.plot_response_time_histogram()
-            viz_engine.plot_error_handling_effectiveness()
-            viz_engine.plot_correlation_analysis()
-            print("✅ Basic charts generated successfully!")
-        elif args.enhanced:
-            viz_engine.generate_enhanced_dashboard()
-        elif args.academic:
-            print("🎓 Generating academic metrics charts...")
-            viz_engine.calculate_enhanced_metrics()
-            viz_engine.plot_academic_metrics_radar()
-            viz_engine.plot_network_metrics_heatmap()
-            viz_engine.plot_semantic_analysis()
-            viz_engine.plot_metric_comparison_matrix()
-            viz_engine.plot_performance_trends()
-            print("✅ Academic metrics charts generated successfully!")
-        elif args.dashboard:
-            viz_engine.create_comprehensive_dashboard()
-        else:
-            print("📊 Visualization Engine for AI RAN Simulation Evaluation")
-            print("=" * 60)
-            print("Available options:")
-            print("  --all       : Generate all charts (basic + enhanced + interactive)")
-            print("  --basic     : Generate basic performance charts only")
-            print("  --enhanced  : Generate enhanced academic dashboard")
-            print("  --academic  : Generate academic metrics charts only")
-            print("  --dashboard : Generate interactive dashboard")
-            print("  --summary   : Show data summary")
-            print("\nExample usage:")
-            print("  python visualization_engine.py evaluation_results_20250710_202956 --all")
-            print("  python visualization_engine.py evaluation_results_20250710_202956 --enhanced")
-            
-    except Exception as e:
-        print(f"❌ Error: {e}")
-        return 1
-    
-    return 0
-
+# Remove CLI, always run all charts
 if __name__ == "__main__":
-    exit(main()) 
+    import sys
+    if len(sys.argv) != 2:
+        print("Usage: python visualization_engine.py <results_dir>")
+        sys.exit(1)
+    results_dir = sys.argv[1]
+    viz_engine = VisualizationEngine(results_dir)
+    viz_engine.generate_all_charts()
+    viz_engine.plot_metric_radar()
+    print("✅ All charts generated successfully!") 

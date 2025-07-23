@@ -111,7 +111,7 @@ Given a static question, you should:
 1. Ask follow-up questions naturally as a real engineer would
 2. Show interest in the response and ask for more details
 3. Ask clarifying questions if the response is unclear
-4. Continue the conversation for 2-3 turns maximum
+4. Continue the conversation for 14 turns maximum if asked for clarification, but don't deviate from the original question
 5. Keep the conversation focused on the original topic
 
 Example conversation flow:
@@ -183,12 +183,11 @@ IMPORTANT:
     async def _run_simulation_background(self):
         """Run simulation in background without blocking"""
         try:
-            # Run simulation for a few steps to initialize
-            for i in range(3):  # Run 3 steps to initialize
+            # Run simulation for a few steps to initializes
+            for i in range(3):  # Run 3 simulation steps for initialization
                 if self.simulation_engine:
                     self.simulation_engine.step(SIM_STEP_TIME_DEFAULT)
                 await asyncio.sleep(0.1)  # Small delay between steps
-            
             logger.info("Background simulation initialized with 3 steps")
         except Exception as e:
             logger.error(f"Error in background simulation: {e}")
@@ -221,11 +220,14 @@ DYNAMIC CONVERSATION:
 """
         
         for i, turn in enumerate(log_entry['dynamic_conversation']):
-            log_text += f"Turn {i+1}: {turn.get('content', '')}\n"
-        
+            role = turn.get('role', 'user')
+            content = turn.get('content', '')
+            if not content.strip():
+                content = '[NO RESPONSE]'
+            log_text += f"Turn {i+1} [{role}]: {content}\n"
         # Add max turns exceeded warning if applicable
         if log_entry.get('max_turns_exceeded', False):
-            log_text += f"\n⚠️  WARNING: Max turns (6) exceeded - conversation was terminated\n"
+            log_text += f"\n⚠️  WARNING: Max turns (14) exceeded - conversation was terminated\n"
         
         log_text += f"""
 AGENT RESPONSE:
@@ -409,7 +411,7 @@ IMPORTANT:
         # Initialize conversation tracking
         conversation_turns = []
         current_question = question['static_question']
-        max_turns = 14  # Increased from 6 to 14 per user request
+        max_turns = 14 
         turn_count = 0
         max_turns_exceeded = False
         
@@ -619,7 +621,7 @@ If you need to ask a follow-up question, make it specific to the test question.
                 
                 # Provide a default evaluation score for max turns exceeded
                 evaluation_score = 0.3  # Low score for incomplete conversation
-                evaluation_reasoning = f"Conversation was terminated due to max turns (6) being exceeded. Score reduced due to incomplete conversation.\n\nNOTE: Max turns (6) exceeded. Score reduced due to incomplete conversation."
+                evaluation_reasoning = f"Conversation was terminated due to max turns (14) being exceeded. Score reduced due to incomplete conversation.\n\nNOTE: Max turns (14) exceeded. Score reduced due to incomplete conversation."
                 
                 # Create conversation log
                 conversation_data = {
@@ -702,7 +704,9 @@ If you need to ask a follow-up question, make it specific to the test question.
             self.results.append(result)
             
             # Save individual conversation log
-            log_file = os.path.join(output_dir, f"conversation_{question['id']}.log")
+            indiv_log_dir = os.path.join(output_dir, 'individual_conversation_logs')
+            os.makedirs(indiv_log_dir, exist_ok=True)
+            log_file = os.path.join(indiv_log_dir, f"conversation_{question['id']}.log")
             with open(log_file, 'w', encoding='utf-8') as f:
                 f.write(result.conversation_log)
         
@@ -857,7 +861,9 @@ async def main():
         
         # Save result
         os.makedirs(output_dir, exist_ok=True)
-        log_file = os.path.join(output_dir, f"conversation_{question['id']}.log")
+        indiv_log_dir = os.path.join(output_dir, 'individual_conversation_logs')
+        os.makedirs(indiv_log_dir, exist_ok=True)
+        log_file = os.path.join(indiv_log_dir, f"conversation_{question['id']}.log")
         with open(log_file, 'w', encoding='utf-8') as f:
             f.write(result.conversation_log)
         
