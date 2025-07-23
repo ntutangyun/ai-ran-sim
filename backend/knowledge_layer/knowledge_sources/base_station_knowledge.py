@@ -92,11 +92,19 @@ def get_bs_attributes(sim, knowledge_router, query_key, params):
         if (
             attr == "cell_list"
             or attr == "ue_registry"
-            or attr == "ric_control_actions"
         ):
             response += f"- {attr}: \n"
             for cell in value.values():
                 response += f"  - {repr(cell)}\n"
+            continue
+
+        if attr == "ric_control_actions":
+            if len(value) == 0:
+                response += f"- {attr}: Empty\n"
+                continue
+            response += f"- {attr} (count: {len(value)}): \n"
+            for action in value:
+                response += f"  - {repr(action)}\n"
             continue
 
         if attr == "ue_rrc_meas_events":

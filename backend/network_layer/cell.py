@@ -62,6 +62,14 @@ class Cell:
         return self.allocated_prb / self.max_prb
 
     @property
+    def current_dl_load(self):
+        return self.allocated_dl_prb / self.max_dl_prb
+
+    @property
+    def current_ul_load(self):
+        return self.allocated_ul_prb / self.max_ul_prb
+
+    @property
     def position_x(self):
         return self.base_station.position_x
 
@@ -250,5 +258,6 @@ class Cell:
             "allocated_ul_prb": self.allocated_ul_prb,
             "current_dl_load": self.allocated_dl_prb / self.max_dl_prb,
             "current_ul_load": self.allocated_ul_prb / self.max_ul_prb,
+            "current_load": self.current_load,
             "connected_ue_list": list(self.connected_ue_list.keys()),
         }

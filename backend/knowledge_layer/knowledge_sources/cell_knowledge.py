@@ -23,6 +23,7 @@ SUPPORTED_CELL_ATTRIBUTES = [
     "allocated_ul_prb",
     "current_dl_load",
     "current_ul_load",
+    "current_load",
     "position_x",
     "position_y",
 ]
@@ -79,11 +80,11 @@ def get_ue_repr_list(sim, knowledge_router, query_key, params):
 
 
 # ------------------------------------------
-#     GET /cells/{ue_imsi}
+#     GET /cells/{cell_id}
 #       → List all attributes values for the given Cell
 # ------------------------------------------
 @knowledge_entry(
-    key="/cells/{ue_imsi}",
+    key="/cells/{cell_id}",
     tags=[KnowledgeTag.CELL],
     related=[],
 )
