@@ -5,3 +5,7 @@ openai-agents[viz]
 pymongo
 requests
 opencv-python
+matplotlib 
+seaborn 
+numpy 
+plotly

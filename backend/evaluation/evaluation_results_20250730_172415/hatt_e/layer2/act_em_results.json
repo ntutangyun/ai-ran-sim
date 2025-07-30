@@ -1,0 +1,808 @@
+{
+  "per_question": [
+    {
+      "question_id": "q_001",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_002",
+      "planned_tools": [
+        "get_knowledge_bulk"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 0.0,
+      "reasoning": "Planned: ['get_knowledge_bulk']; Used: ['get_knowledge']; Matched: []; Missing: ['get_knowledge_bulk']; Extra: ['get_knowledge']. Jaccard score: 0.00.",
+      "tools_used": [
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_003",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_004",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "act_em_score": 0.5,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge_bulk', 'get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: ['get_knowledge_bulk']. Jaccard score: 0.50.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_005",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_006",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 0.5,
+      "reasoning": "Planned: ['get_knowledge_bulk', 'get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: ['get_knowledge_bulk']; Extra: []. Jaccard score: 0.50.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_007",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_008",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_009",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_010",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 0.5,
+      "reasoning": "Planned: ['get_knowledge_bulk', 'get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: ['get_knowledge_bulk']; Extra: []. Jaccard score: 0.50.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_011",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_012",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_013",
+      "planned_tools": [
+        "get_knowledge_bulk"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 0.0,
+      "reasoning": "Planned: ['get_knowledge_bulk']; Used: ['get_knowledge']; Matched: []; Missing: ['get_knowledge_bulk']; Extra: ['get_knowledge']. Jaccard score: 0.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_014",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_015",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_016",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_017",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_018",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_019",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_020",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_021",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_022",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_023",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_024",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_025",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_026",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_027",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_028",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_029",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "act_em_score": 0.5,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge_bulk', 'get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: ['get_knowledge_bulk']. Jaccard score: 0.50.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge_bulk",
+        "get_knowledge",
+        "get_knowledge_bulk"
+      ]
+    },
+    {
+      "question_id": "q_030",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_031",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_032",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_033",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_034",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_035",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "act_em_score": 0.5,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge_bulk', 'get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: ['get_knowledge_bulk']. Jaccard score: 0.50.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge_bulk",
+        "get_knowledge_bulk"
+      ]
+    },
+    {
+      "question_id": "q_036",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_037",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_038",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_039",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_040",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "act_em_score": 0.5,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge_bulk', 'get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: ['get_knowledge_bulk']. Jaccard score: 0.50.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge_bulk",
+        "get_knowledge_bulk"
+      ]
+    },
+    {
+      "question_id": "q_041",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "act_em_score": 0.5,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge_bulk', 'get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: ['get_knowledge_bulk']. Jaccard score: 0.50.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge_bulk"
+      ]
+    },
+    {
+      "question_id": "q_042",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_043",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_044",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_045",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_046",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_047",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [
+        "get_knowledge"
+      ],
+      "act_em_score": 1.0,
+      "reasoning": "Planned: ['get_knowledge']; Used: ['get_knowledge']; Matched: ['get_knowledge']; Missing: []; Extra: []. Jaccard score: 1.00.",
+      "tools_used": [
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge",
+        "get_knowledge"
+      ]
+    },
+    {
+      "question_id": "q_048",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_049",
+      "planned_tools": [
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    },
+    {
+      "question_id": "q_050",
+      "planned_tools": [
+        "get_knowledge_bulk",
+        "get_knowledge"
+      ],
+      "executed_tools": [],
+      "act_em_score": 0.0,
+      "reasoning": "Planned tools: ['get_knowledge_bulk', 'get_knowledge'], but none were used. Score is 0.",
+      "tools_used": []
+    }
+  ],
+  "aggregate": {
+    "mean_act_em": 0.43,
+    "num_questions": 50,
+    "scores": [
+      1.0,
+      0.0,
+      0.0,
+      0.5,
+      0.0,
+      0.5,
+      0.0,
+      1.0,
+      1.0,
+      0.5,
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.5,
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.5,
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.5,
+      0.5,
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "note": "act_em_score is Jaccard similarity between expected_tools and tools_used."
+}
