@@ -1,0 +1,868 @@
+{
+  "per_question": [
+    {
+      "question_id": "q_001",
+      "user_request": "What is the current status of user equipment IMSI_1?",
+      "latency_metrics": {
+        "response_time_seconds": 7.849277019500732,
+        "response_time_ms": 7849.277019500732,
+        "tool_execution_time_ms": 3500.0,
+        "processing_overhead_ms": 4349.277019500732
+      },
+      "latency_efficiency_score": 3.5861012172698974,
+      "latency_breakdown": {
+        "response_time_seconds": 7.849277019500732,
+        "response_time_ms": 7849.277019500732,
+        "tool_execution_time_ms": 3500.0,
+        "processing_overhead_ms": 4349.277019500732
+      }
+    },
+    {
+      "question_id": "q_002",
+      "user_request": "Show me all base stations in the network",
+      "latency_metrics": {
+        "response_time_seconds": 5.284863233566284,
+        "response_time_ms": 5284.863233566284,
+        "tool_execution_time_ms": 3500.0,
+        "processing_overhead_ms": 1784.8632335662842
+      },
+      "latency_efficiency_score": 3.9451191473007197,
+      "latency_breakdown": {
+        "response_time_seconds": 5.284863233566284,
+        "response_time_ms": 5284.863233566284,
+        "tool_execution_time_ms": 3500.0,
+        "processing_overhead_ms": 1784.8632335662842
+      }
+    },
+    {
+      "question_id": "q_003",
+      "user_request": "What are the available AI services?",
+      "latency_metrics": {
+        "response_time_seconds": 5.182764530181885,
+        "response_time_ms": 5182.764530181885,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 4.274412965774536,
+      "latency_breakdown": {
+        "response_time_seconds": 5.182764530181885,
+        "response_time_ms": 5182.764530181885,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_004",
+      "user_request": "What is the relationship between IMSI_1 and its serving cell?",
+      "latency_metrics": {
+        "response_time_seconds": 10.844834804534912,
+        "response_time_ms": 10844.834804534912,
+        "tool_execution_time_ms": 14000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 2.221723127365112,
+      "latency_breakdown": {
+        "response_time_seconds": 10.844834804534912,
+        "response_time_ms": 10844.834804534912,
+        "tool_execution_time_ms": 14000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_005",
+      "user_request": "How are AI services performing in the network?",
+      "latency_metrics": {
+        "response_time_seconds": 5.885397672653198,
+        "response_time_ms": 5885.397672653198,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 4.176044325828553,
+      "latency_breakdown": {
+        "response_time_seconds": 5.885397672653198,
+        "response_time_ms": 5885.397672653198,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_006",
+      "user_request": "Analyze the performance of cell BS_001_Cell_1 and suggest optimizations",
+      "latency_metrics": {
+        "response_time_seconds": 9.452350854873657,
+        "response_time_ms": 9452.350854873657,
+        "tool_execution_time_ms": 10500.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 2.731670880317688,
+      "latency_breakdown": {
+        "response_time_seconds": 9.452350854873657,
+        "response_time_ms": 9452.350854873657,
+        "tool_execution_time_ms": 10500.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_007",
+      "user_request": "What are the potential bottlenecks in the current network configuration?",
+      "latency_metrics": {
+        "response_time_seconds": 7.142245054244995,
+        "response_time_ms": 7142.245054244995,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 4.000085692405701,
+      "latency_breakdown": {
+        "response_time_seconds": 7.142245054244995,
+        "response_time_ms": 7142.245054244995,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_008",
+      "user_request": "What is the current status of the RIC?",
+      "latency_metrics": {
+        "response_time_seconds": 5.477253437042236,
+        "response_time_ms": 5477.253437042236,
+        "tool_execution_time_ms": 7000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.603184518814087,
+      "latency_breakdown": {
+        "response_time_seconds": 5.477253437042236,
+        "response_time_ms": 5477.253437042236,
+        "tool_execution_time_ms": 7000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_009",
+      "user_request": "What xApps are running on the RIC?",
+      "latency_metrics": {
+        "response_time_seconds": 10.400395393371582,
+        "response_time_ms": 10400.395393371582,
+        "tool_execution_time_ms": 14000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 2.283944644927978,
+      "latency_breakdown": {
+        "response_time_seconds": 10.400395393371582,
+        "response_time_ms": 10400.395393371582,
+        "tool_execution_time_ms": 14000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_010",
+      "user_request": "How is the RIC managing network optimization?",
+      "latency_metrics": {
+        "response_time_seconds": 14.696574211120605,
+        "response_time_ms": 14696.574211120605,
+        "tool_execution_time_ms": 14000.0,
+        "processing_overhead_ms": 696.5742111206055
+      },
+      "latency_efficiency_score": 1.6824796104431152,
+      "latency_breakdown": {
+        "response_time_seconds": 14.696574211120605,
+        "response_time_ms": 14696.574211120605,
+        "tool_execution_time_ms": 14000.0,
+        "processing_overhead_ms": 696.5742111206055
+      }
+    },
+    {
+      "question_id": "q_011",
+      "user_request": "What is the current simulation state?",
+      "latency_metrics": {
+        "response_time_seconds": 6.989054441452026,
+        "response_time_ms": 6989.054441452026,
+        "tool_execution_time_ms": 10500.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.076532378196716,
+      "latency_breakdown": {
+        "response_time_seconds": 6.989054441452026,
+        "response_time_ms": 6989.054441452026,
+        "tool_execution_time_ms": 10500.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_012",
+      "user_request": "What is the status of non-existent IMSI_999?",
+      "latency_metrics": {
+        "response_time_seconds": 6.274421215057373,
+        "response_time_ms": 6274.421215057373,
+        "tool_execution_time_ms": 7000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.4915810298919676,
+      "latency_breakdown": {
+        "response_time_seconds": 6.274421215057373,
+        "response_time_ms": 6274.421215057373,
+        "tool_execution_time_ms": 7000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_013",
+      "user_request": "Compare the performance of different cells in the network",
+      "latency_metrics": {
+        "response_time_seconds": 21.858301877975464,
+        "response_time_ms": 21858.301877975464,
+        "tool_execution_time_ms": 35000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.0,
+      "latency_breakdown": {
+        "response_time_seconds": 21.858301877975464,
+        "response_time_ms": 21858.301877975464,
+        "tool_execution_time_ms": 35000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_014",
+      "user_request": "Which UEs are using AI services?",
+      "latency_metrics": {
+        "response_time_seconds": 20.038113355636597,
+        "response_time_ms": 20038.113355636597,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 2.1946641302108763,
+      "latency_breakdown": {
+        "response_time_seconds": 20.038113355636597,
+        "response_time_ms": 20038.113355636597,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_015",
+      "user_request": "How has the network performance changed over time?",
+      "latency_metrics": {
+        "response_time_seconds": 7.092925786972046,
+        "response_time_ms": 7092.925786972046,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 4.006990389823914,
+      "latency_breakdown": {
+        "response_time_seconds": 7.092925786972046,
+        "response_time_ms": 7092.925786972046,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_016",
+      "user_request": "What is the status of edge servers in the network?",
+      "latency_metrics": {
+        "response_time_seconds": 8.225186586380005,
+        "response_time_ms": 8225.186586380005,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.848473877906799,
+      "latency_breakdown": {
+        "response_time_seconds": 8.225186586380005,
+        "response_time_ms": 8225.186586380005,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_017",
+      "user_request": "What is the QoS performance for IMSI_1?",
+      "latency_metrics": {
+        "response_time_seconds": 11.426696062088013,
+        "response_time_ms": 11426.696062088013,
+        "tool_execution_time_ms": 24500.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.900262551307678,
+      "latency_breakdown": {
+        "response_time_seconds": 11.426696062088013,
+        "response_time_ms": 11426.696062088013,
+        "tool_execution_time_ms": 24500.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_018",
+      "user_request": "What security vulnerabilities exist in the current network configuration?",
+      "latency_metrics": {
+        "response_time_seconds": 6.352056264877319,
+        "response_time_ms": 6352.056264877319,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 4.110712122917175,
+      "latency_breakdown": {
+        "response_time_seconds": 6.352056264877319,
+        "response_time_ms": 6352.056264877319,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_019",
+      "user_request": "How many handovers occurred for IMSI_1 in the last hour?",
+      "latency_metrics": {
+        "response_time_seconds": 13.635037660598755,
+        "response_time_ms": 13635.037660598755,
+        "tool_execution_time_ms": 28000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.591094727516174,
+      "latency_breakdown": {
+        "response_time_seconds": 13.635037660598755,
+        "response_time_ms": 13635.037660598755,
+        "tool_execution_time_ms": 28000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_020",
+      "user_request": "What are the current traffic patterns in the network?",
+      "latency_metrics": {
+        "response_time_seconds": 20.850812435150146,
+        "response_time_ms": 20850.812435150146,
+        "tool_execution_time_ms": 56000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.0,
+      "latency_breakdown": {
+        "response_time_seconds": 20.850812435150146,
+        "response_time_ms": 20850.812435150146,
+        "tool_execution_time_ms": 56000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_021",
+      "user_request": "What is the status of AI model training in the network?",
+      "latency_metrics": {
+        "response_time_seconds": 11.648024320602417,
+        "response_time_ms": 11648.024320602417,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.369276595115662,
+      "latency_breakdown": {
+        "response_time_seconds": 11.648024320602417,
+        "response_time_ms": 11648.024320602417,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_022",
+      "user_request": "What network slices are currently active?",
+      "latency_metrics": {
+        "response_time_seconds": 22.99627423286438,
+        "response_time_ms": 22996.27423286438,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.780521607398987,
+      "latency_breakdown": {
+        "response_time_seconds": 22.99627423286438,
+        "response_time_ms": 22996.27423286438,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_023",
+      "user_request": "What is the energy consumption of base stations?",
+      "latency_metrics": {
+        "response_time_seconds": 6.3733367919921875,
+        "response_time_ms": 6373.3367919921875,
+        "tool_execution_time_ms": 3500.0,
+        "processing_overhead_ms": 2873.3367919921875
+      },
+      "latency_efficiency_score": 3.7927328491210934,
+      "latency_breakdown": {
+        "response_time_seconds": 6.3733367919921875,
+        "response_time_ms": 6373.3367919921875,
+        "tool_execution_time_ms": 3500.0,
+        "processing_overhead_ms": 2873.3367919921875
+      }
+    },
+    {
+      "question_id": "q_024",
+      "user_request": "Which network components need predictive maintenance?",
+      "latency_metrics": {
+        "response_time_seconds": 10.043571472167969,
+        "response_time_ms": 10043.571472167969,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.593899993896484,
+      "latency_breakdown": {
+        "response_time_seconds": 10.043571472167969,
+        "response_time_ms": 10043.571472167969,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_025",
+      "user_request": "What is the average latency for IMSI_1?",
+      "latency_metrics": {
+        "response_time_seconds": 13.058067560195923,
+        "response_time_ms": 13058.067560195923,
+        "tool_execution_time_ms": 21000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.6718705415725708,
+      "latency_breakdown": {
+        "response_time_seconds": 13.058067560195923,
+        "response_time_ms": 13058.067560195923,
+        "tool_execution_time_ms": 21000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_026",
+      "user_request": "What is the coverage area of BS_001?",
+      "latency_metrics": {
+        "response_time_seconds": 8.002253532409668,
+        "response_time_ms": 8002.253532409668,
+        "tool_execution_time_ms": 7000.0,
+        "processing_overhead_ms": 1002.253532409668
+      },
+      "latency_efficiency_score": 3.249684505462646,
+      "latency_breakdown": {
+        "response_time_seconds": 8.002253532409668,
+        "response_time_ms": 8002.253532409668,
+        "tool_execution_time_ms": 7000.0,
+        "processing_overhead_ms": 1002.253532409668
+      }
+    },
+    {
+      "question_id": "q_027",
+      "user_request": "What is the current network capacity and how can it be optimized?",
+      "latency_metrics": {
+        "response_time_seconds": 92.42504477500916,
+        "response_time_ms": 92425.04477500916,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.5,
+      "latency_breakdown": {
+        "response_time_seconds": 92.42504477500916,
+        "response_time_ms": 92425.04477500916,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_028",
+      "user_request": "Are there any interference issues in the network?",
+      "latency_metrics": {
+        "response_time_seconds": 5.197500944137573,
+        "response_time_ms": 5197.500944137573,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 4.27234986782074,
+      "latency_breakdown": {
+        "response_time_seconds": 5.197500944137573,
+        "response_time_ms": 5197.500944137573,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_029",
+      "user_request": "How is load balancing performing across cells?",
+      "latency_metrics": {
+        "response_time_seconds": 21.79867434501648,
+        "response_time_ms": 21798.67434501648,
+        "tool_execution_time_ms": 21000.0,
+        "processing_overhead_ms": 798.6743450164795
+      },
+      "latency_efficiency_score": 1.0,
+      "latency_breakdown": {
+        "response_time_seconds": 21.79867434501648,
+        "response_time_ms": 21798.67434501648,
+        "tool_execution_time_ms": 21000.0,
+        "processing_overhead_ms": 798.6743450164795
+      }
+    },
+    {
+      "question_id": "q_030",
+      "user_request": "Which network components are likely to fail in the next 24 hours?",
+      "latency_metrics": {
+        "response_time_seconds": 47.06152558326721,
+        "response_time_ms": 47061.52558326721,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.5,
+      "latency_breakdown": {
+        "response_time_seconds": 47.06152558326721,
+        "response_time_ms": 47061.52558326721,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_031",
+      "user_request": "What is the throughput performance for different UEs?",
+      "latency_metrics": {
+        "response_time_seconds": 12.715880870819092,
+        "response_time_ms": 12715.880870819092,
+        "tool_execution_time_ms": 49000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.719776678085327,
+      "latency_breakdown": {
+        "response_time_seconds": 12.715880870819092,
+        "response_time_ms": 12715.880870819092,
+        "tool_execution_time_ms": 49000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_032",
+      "user_request": "Which UEs are currently connected to the network?",
+      "latency_metrics": {
+        "response_time_seconds": 12.680627822875977,
+        "response_time_ms": 12680.627822875977,
+        "tool_execution_time_ms": 7000.0,
+        "processing_overhead_ms": 5680.627822875977
+      },
+      "latency_efficiency_score": 2.594712104797363,
+      "latency_breakdown": {
+        "response_time_seconds": 12.680627822875977,
+        "response_time_ms": 12680.627822875977,
+        "tool_execution_time_ms": 7000.0,
+        "processing_overhead_ms": 5680.627822875977
+      }
+    },
+    {
+      "question_id": "q_033",
+      "user_request": "How can network resources be optimized for better performance?",
+      "latency_metrics": {
+        "response_time_seconds": 8.281385898590088,
+        "response_time_ms": 8281.385898590088,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.8406059741973877,
+      "latency_breakdown": {
+        "response_time_seconds": 8.281385898590088,
+        "response_time_ms": 8281.385898590088,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_034",
+      "user_request": "What is the service quality for voice calls in the network?",
+      "latency_metrics": {
+        "response_time_seconds": 5.9027791023254395,
+        "response_time_ms": 5902.779102325439,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 4.1736109256744385,
+      "latency_breakdown": {
+        "response_time_seconds": 5.9027791023254395,
+        "response_time_ms": 5902.779102325439,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_035",
+      "user_request": "What is the current bandwidth usage across the network?",
+      "latency_metrics": {
+        "response_time_seconds": 14.576375961303711,
+        "response_time_ms": 14576.375961303711,
+        "tool_execution_time_ms": 24500.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.4593073654174804,
+      "latency_breakdown": {
+        "response_time_seconds": 14.576375961303711,
+        "response_time_ms": 14576.375961303711,
+        "tool_execution_time_ms": 24500.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_036",
+      "user_request": "Are there any anomalies detected in the network behavior?",
+      "latency_metrics": {
+        "response_time_seconds": 6.374749422073364,
+        "response_time_ms": 6374.749422073364,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 4.107535080909729,
+      "latency_breakdown": {
+        "response_time_seconds": 6.374749422073364,
+        "response_time_ms": 6374.749422073364,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_037",
+      "user_request": "What are the mobility patterns of IMSI_1?",
+      "latency_metrics": {
+        "response_time_seconds": 13.624652862548828,
+        "response_time_ms": 13624.652862548828,
+        "tool_execution_time_ms": 21000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.5925485992431638,
+      "latency_breakdown": {
+        "response_time_seconds": 13.624652862548828,
+        "response_time_ms": 13624.652862548828,
+        "tool_execution_time_ms": 21000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_038",
+      "user_request": "What is the signal strength for IMSI_1?",
+      "latency_metrics": {
+        "response_time_seconds": 6.3382604122161865,
+        "response_time_ms": 6338.2604122161865,
+        "tool_execution_time_ms": 7000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.482643542289734,
+      "latency_breakdown": {
+        "response_time_seconds": 6.3382604122161865,
+        "response_time_ms": 6338.2604122161865,
+        "tool_execution_time_ms": 7000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_039",
+      "user_request": "How should the network scale based on predicted traffic patterns?",
+      "latency_metrics": {
+        "response_time_seconds": 8.545519590377808,
+        "response_time_ms": 8545.519590377808,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.803627257347107,
+      "latency_breakdown": {
+        "response_time_seconds": 8.545519590377808,
+        "response_time_ms": 8545.519590377808,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_040",
+      "user_request": "Are there any congested areas in the network?",
+      "latency_metrics": {
+        "response_time_seconds": 11.889530897140503,
+        "response_time_ms": 11889.530897140503,
+        "tool_execution_time_ms": 17500.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.8354656744003295,
+      "latency_breakdown": {
+        "response_time_seconds": 11.889530897140503,
+        "response_time_ms": 11889.530897140503,
+        "tool_execution_time_ms": 17500.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_041",
+      "user_request": "What is the power consumption of IMSI_1?",
+      "latency_metrics": {
+        "response_time_seconds": 15.473014831542969,
+        "response_time_ms": 15473.014831542969,
+        "tool_execution_time_ms": 24500.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.333777923583984,
+      "latency_breakdown": {
+        "response_time_seconds": 15.473014831542969,
+        "response_time_ms": 15473.014831542969,
+        "tool_execution_time_ms": 24500.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_042",
+      "user_request": "How are machine learning models performing in network optimization?",
+      "latency_metrics": {
+        "response_time_seconds": 7.999364614486694,
+        "response_time_ms": 7999.364614486694,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.8800889539718626,
+      "latency_breakdown": {
+        "response_time_seconds": 7.999364614486694,
+        "response_time_ms": 7999.364614486694,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_043",
+      "user_request": "What is the spectrum utilization across different cells?",
+      "latency_metrics": {
+        "response_time_seconds": 10.120095014572144,
+        "response_time_ms": 10120.095014572144,
+        "tool_execution_time_ms": 35000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 2.0831866979598996,
+      "latency_breakdown": {
+        "response_time_seconds": 10.120095014572144,
+        "response_time_ms": 10120.095014572144,
+        "tool_execution_time_ms": 35000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_044",
+      "user_request": "What is the connection quality for IMSI_1?",
+      "latency_metrics": {
+        "response_time_seconds": 9.799094438552856,
+        "response_time_ms": 9799.094438552856,
+        "tool_execution_time_ms": 17500.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 2.1281267786026,
+      "latency_breakdown": {
+        "response_time_seconds": 9.799094438552856,
+        "response_time_ms": 9799.094438552856,
+        "tool_execution_time_ms": 17500.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_045",
+      "user_request": "How is cognitive radio technology being utilized in the network?",
+      "latency_metrics": {
+        "response_time_seconds": 6.910496711730957,
+        "response_time_ms": 6910.496711730957,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 4.032530460357666,
+      "latency_breakdown": {
+        "response_time_seconds": 6.910496711730957,
+        "response_time_ms": 6910.496711730957,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_046",
+      "user_request": "What is the status of backhaul connections?",
+      "latency_metrics": {
+        "response_time_seconds": 16.835559368133545,
+        "response_time_ms": 16835.559368133545,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 2.6430216884613036,
+      "latency_breakdown": {
+        "response_time_seconds": 16.835559368133545,
+        "response_time_ms": 16835.559368133545,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_047",
+      "user_request": "What protocols are being used by IMSI_1?",
+      "latency_metrics": {
+        "response_time_seconds": 17.181217193603516,
+        "response_time_ms": 17181.217193603516,
+        "tool_execution_time_ms": 21000.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 1.0946295928955074,
+      "latency_breakdown": {
+        "response_time_seconds": 17.181217193603516,
+        "response_time_ms": 17181.217193603516,
+        "tool_execution_time_ms": 21000.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_048",
+      "user_request": "How is network virtualization affecting performance?",
+      "latency_metrics": {
+        "response_time_seconds": 10.814636468887329,
+        "response_time_ms": 10814.63646888733,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.4859508943557738,
+      "latency_breakdown": {
+        "response_time_seconds": 10.814636468887329,
+        "response_time_ms": 10814.63646888733,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_049",
+      "user_request": "What is the roaming behavior of IMSI_1?",
+      "latency_metrics": {
+        "response_time_seconds": 20.17010760307312,
+        "response_time_ms": 20170.10760307312,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 2.176184935569763,
+      "latency_breakdown": {
+        "response_time_seconds": 20.17010760307312,
+        "response_time_ms": 20170.10760307312,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    },
+    {
+      "question_id": "q_050",
+      "user_request": "What infrastructure changes are needed for 5G deployment?",
+      "latency_metrics": {
+        "response_time_seconds": 7.834404945373535,
+        "response_time_ms": 7834.404945373535,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      },
+      "latency_efficiency_score": 3.903183307647705,
+      "latency_breakdown": {
+        "response_time_seconds": 7.834404945373535,
+        "response_time_ms": 7834.404945373535,
+        "tool_execution_time_ms": 0.0,
+        "processing_overhead_ms": 0
+      }
+    }
+  ],
+  "aggregate": {
+    "mean_response_time": 13.352611789703369,
+    "median_response_time": 10.120095014572144,
+    "min_response_time": 5.182764530181885,
+    "max_response_time": 92.42504477500916,
+    "mean_latency_efficiency": 2.7965185546875,
+    "total_questions": 50,
+    "latency_distribution": {
+      "fast": 0,
+      "medium": 39,
+      "slow": 11
+    }
+  },
+  "note": "Layer 3 Latency evaluates the response time and processing efficiency of each question."
+}

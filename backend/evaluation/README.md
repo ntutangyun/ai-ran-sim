@@ -144,34 +144,8 @@ python backend/evaluation/visualization_engine.py evaluation_results_YYYYMMDD_HH
 ```bash
 python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS
 ```
-- Computes HATT-E Layer 1, Layer 2, and Layer 3 metrics, with comprehensive visualizations.
-
-### 4. (Optional) Run Specific Layer 3 Metrics
-```bash
-# Task Success Rate (LLM-judged)
-python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --tsr3
-
-# Response Quality (1-5 scale)
-python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --rq
-
-# Consistency across similar questions
-python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --consistency
-
-# System Cost analysis
-python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --cost
-
-# Latency analysis
-python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --latency
-
-# Turn count analysis
-python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --turns
-
-# Layer 3 visualizations
-python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --visualize3
-
-# Layer 3 aggregation
-python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --aggregate3
-```
+- Computes complete HATT-E evaluation (Layer 1 + Layer 2 + Layer 3) with comprehensive visualizations.
+- Automatically generates all metrics, visualizations, and aggregations in one command.
 
 ---
 

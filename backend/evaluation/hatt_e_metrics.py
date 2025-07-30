@@ -1311,9 +1311,16 @@ FEEDBACK: <your feedback>
         Load conversation logs from the all_conversation_logs file.
         Returns a dictionary mapping question_id to conversation log content.
         """
-        logs_file = os.path.join(self.results_dir, "all_conversation_logs_20250723_224333.txt")
-        if not os.path.exists(logs_file):
-            print(f"[Layer 3 Consistency] ⚠️  Conversation logs file not found: {logs_file}")
+        # Dynamically find the conversation logs file
+        logs_file = None
+        for file in os.listdir(self.results_dir):
+            if file.startswith("all_conversation_logs_") and file.endswith(".txt"):
+                logs_file = os.path.join(self.results_dir, file)
+                break
+        
+        if not logs_file or not os.path.exists(logs_file):
+            print(f"[Layer 3 Consistency] ⚠️  Conversation logs file not found in {self.results_dir}")
+            print(f"[Layer 3 Consistency] Looking for files starting with 'all_conversation_logs_'")
             return {}
         
         try:
@@ -2623,86 +2630,13 @@ FEEDBACK: <your feedback>
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 2:
-        print("Usage: python hatt_e_metrics.py <results_dir> [--layer3|--tsr3|--rq|--response-quality|--consistency|--cost|--latency|--turns|--visualize3|--aggregate3]")
+        print("Usage: python hatt_e_metrics.py <results_dir>")
         sys.exit(1)
     results_dir = sys.argv[1]
-    # Layer 3 CLI entries: if specific Layer 3 flags are passed, run only that metric and exit
-    if len(sys.argv) > 2:
-        if "--tsr3" in sys.argv:
-            evaluator = HATTEvaluator(results_dir)
-            l3_dir = os.path.join(results_dir, "hatt_e", "layer3")
-            os.makedirs(l3_dir, exist_ok=True)
-            tsr3_path = os.path.join(l3_dir, "task_success_rate.json")
-            print("[HATT-E] Running Layer 3 Task Success Rate (TSR) evaluation via LLM judge...")
-            import asyncio
-            asyncio.run(evaluator.compute_layer3_tsr_llm(output_path=tsr3_path))
-            print(f"[Layer 3] Task Success Rate results saved to {tsr3_path}")
-            sys.exit(0)
-        elif "--rq" in sys.argv or "--response-quality" in sys.argv:
-            evaluator = HATTEvaluator(results_dir)
-            l3_dir = os.path.join(results_dir, "hatt_e", "layer3")
-            os.makedirs(l3_dir, exist_ok=True)
-            rq_path = os.path.join(l3_dir, "response_quality.json")
-            print("[HATT-E] Running Layer 3 Response Quality (RQ) evaluation via LLM judge...")
-            import asyncio
-            asyncio.run(evaluator.compute_layer3_response_quality(output_path=rq_path))
-            print(f"[Layer 3] Response Quality results saved to {rq_path}")
-            sys.exit(0)
-        elif "--consistency" in sys.argv:
-            evaluator = HATTEvaluator(results_dir)
-            l3_dir = os.path.join(results_dir, "hatt_e", "layer3")
-            os.makedirs(l3_dir, exist_ok=True)
-            consistency_path = os.path.join(l3_dir, "consistency.json")
-            print("[HATT-E] Running Layer 3 Consistency evaluation via LLM judge...")
-            import asyncio
-            asyncio.run(evaluator.compute_layer3_consistency(output_path=consistency_path))
-            print(f"[Layer 3] Consistency results saved to {consistency_path}")
-            sys.exit(0)
-        elif "--cost" in sys.argv:
-            evaluator = HATTEvaluator(results_dir)
-            l3_dir = os.path.join(results_dir, "hatt_e", "layer3")
-            os.makedirs(l3_dir, exist_ok=True)
-            cost_path = os.path.join(l3_dir, "system_cost.json")
-            print("[HATT-E] Running Layer 3 System Cost evaluation...")
-            import asyncio
-            asyncio.run(evaluator.compute_layer3_system_cost(output_path=cost_path))
-            print(f"[Layer 3] System Cost results saved to {cost_path}")
-            sys.exit(0)
-        elif "--latency" in sys.argv:
-            evaluator = HATTEvaluator(results_dir)
-            l3_dir = os.path.join(results_dir, "hatt_e", "layer3")
-            os.makedirs(l3_dir, exist_ok=True)
-            latency_path = os.path.join(l3_dir, "latency.json")
-            print("[HATT-E] Running Layer 3 Latency evaluation...")
-            import asyncio
-            asyncio.run(evaluator.compute_layer3_latency(output_path=latency_path))
-            print(f"[Layer 3] Latency results saved to {latency_path}")
-            sys.exit(0)
-        elif "--turns" in sys.argv:
-            evaluator = HATTEvaluator(results_dir)
-            l3_dir = os.path.join(results_dir, "hatt_e", "layer3")
-            os.makedirs(l3_dir, exist_ok=True)
-            turns_path = os.path.join(l3_dir, "turn_count.json")
-            print("[HATT-E] Running Layer 3 Turn Count evaluation...")
-            import asyncio
-            asyncio.run(evaluator.compute_layer3_turn_count(output_path=turns_path))
-            print(f"[Layer 3] Turn Count results saved to {turns_path}")
-            sys.exit(0)
-        elif "--visualize3" in sys.argv:
-            evaluator = HATTEvaluator(results_dir)
-            print("[HATT-E] Running Layer 3 visualization generation...")
-            evaluator.visualize_layer3_metrics()
-            print(f"[Layer 3] Visualizations saved to {results_dir}/hatt_e/visualization/")
-            sys.exit(0)
-        elif "--aggregate3" in sys.argv:
-            evaluator = HATTEvaluator(results_dir)
-            print("[HATT-E] Running Layer 3 aggregation...")
-            import asyncio
-            asyncio.run(evaluator.aggregate_layer3_results())
-            print(f"[Layer 3] Aggregation saved to {results_dir}/hatt_e/layer3/layer3_aggregated.json")
-            sys.exit(0)
-    # Otherwise, run Layer 1 and Layer 2 pipeline as before
+    
+    # Run complete HATT-E pipeline (Layer 1 + Layer 2 + Layer 3)
     evaluator = HATTEvaluator(results_dir)
+    
     # Layer 1 metrics and visualization
     print("[HATT-E] Running Layer 1 metrics...")
     dqs_llm_output_path = os.path.join(evaluator.output_dir, "hatt_e_dqs_llm.json")
@@ -2717,6 +2651,7 @@ if __name__ == "__main__":
     evaluator.aggregate_layer1_results(dqs_llm_output_path, da_output_path, failure_modes_output_path, aggregated_output_path)
     evaluator.visualize_layer1_metrics()
     print(f"[HATT-E] Layer 1 metrics, aggregated results, and visualizations written to {evaluator.output_dir} and visualization folder.")
+    
     # Layer 2 metrics
     print("[HATT-E] Running Layer 2 metrics...")
     l2_dir = os.path.join(results_dir, "hatt_e", "layer2")
@@ -2734,4 +2669,54 @@ if __name__ == "__main__":
     evaluator.compute_tsr_for_all(output_path=tsr_path)
     print(f"[Layer 2] TSR results saved to {tsr_path}")
     evaluator.visualize_layer2_metrics()
-    print("[HATT-E] Layer 2 visualizations written to hatt_e/visualization/") 
+    print("[HATT-E] Layer 2 visualizations written to hatt_e/visualization/")
+    
+    # Layer 3 metrics and visualization
+    print("[HATT-E] Running Layer 3 metrics...")
+    l3_dir = os.path.join(results_dir, "hatt_e", "layer3")
+    os.makedirs(l3_dir, exist_ok=True)
+    tsr3_path = os.path.join(l3_dir, "task_success_rate.json")
+    rq_path = os.path.join(l3_dir, "response_quality.json")
+    consistency_path = os.path.join(l3_dir, "consistency.json")
+    cost_path = os.path.join(l3_dir, "system_cost.json")
+    latency_path = os.path.join(l3_dir, "latency.json")
+    turns_path = os.path.join(l3_dir, "turn_count.json")
+    
+    # Run all Layer 3 metrics
+    print("[Layer 3] Computing Task Success Rate (LLM-judged)...")
+    asyncio.run(evaluator.compute_layer3_tsr_llm(output_path=tsr3_path))
+    print(f"[Layer 3] Task Success Rate results saved to {tsr3_path}")
+    
+    print("[Layer 3] Computing Response Quality...")
+    asyncio.run(evaluator.compute_layer3_response_quality(output_path=rq_path))
+    print(f"[Layer 3] Response Quality results saved to {rq_path}")
+    
+    print("[Layer 3] Computing Consistency...")
+    asyncio.run(evaluator.compute_layer3_consistency(output_path=consistency_path))
+    print(f"[Layer 3] Consistency results saved to {consistency_path}")
+    
+    print("[Layer 3] Computing System Cost...")
+    asyncio.run(evaluator.compute_layer3_system_cost(output_path=cost_path))
+    print(f"[Layer 3] System Cost results saved to {cost_path}")
+    
+    print("[Layer 3] Computing Latency...")
+    asyncio.run(evaluator.compute_layer3_latency(output_path=latency_path))
+    print(f"[Layer 3] Latency results saved to {latency_path}")
+    
+    print("[Layer 3] Computing Turn Count...")
+    asyncio.run(evaluator.compute_layer3_turn_count(output_path=turns_path))
+    print(f"[Layer 3] Turn Count results saved to {turns_path}")
+    
+    # Generate Layer 3 visualizations
+    print("[Layer 3] Generating visualizations...")
+    evaluator.visualize_layer3_metrics()
+    print(f"[Layer 3] Visualizations saved to {results_dir}/hatt_e/visualization/")
+    
+    # Generate Layer 3 aggregation
+    print("[Layer 3] Generating aggregation...")
+    asyncio.run(evaluator.aggregate_layer3_results())
+    print(f"[Layer 3] Aggregation saved to {results_dir}/hatt_e/layer3/layer3_aggregated.json")
+    
+    print("[HATT-E] Complete HATT-E evaluation pipeline finished!")
+    print(f"[HATT-E] All results saved to {results_dir}/hatt_e/")
+    print(f"[HATT-E] All visualizations saved to {results_dir}/hatt_e/visualization/") 

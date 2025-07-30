@@ -1,0 +1,968 @@
+{
+  "per_question": [
+    {
+      "question_id": "q_001",
+      "user_request": "What is the current status of user equipment IMSI_1?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.5,
+        "conversation_depth": 2.0
+      },
+      "turn_efficiency_score": 4.08,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.5,
+        "conversation_depth": 2.0
+      }
+    },
+    {
+      "question_id": "q_002",
+      "user_request": "Show me all base stations in the network",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.5,
+        "conversation_depth": 2.0
+      },
+      "turn_efficiency_score": 4.08,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.5,
+        "conversation_depth": 2.0
+      }
+    },
+    {
+      "question_id": "q_003",
+      "user_request": "What are the available AI services?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_004",
+      "user_request": "What is the relationship between IMSI_1 and its serving cell?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 2.0,
+        "conversation_depth": 5.0
+      },
+      "turn_efficiency_score": 2.7,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 2.0,
+        "conversation_depth": 5.0
+      }
+    },
+    {
+      "question_id": "q_005",
+      "user_request": "How are AI services performing in the network?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_006",
+      "user_request": "Analyze the performance of cell BS_001_Cell_1 and suggest optimizations",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.5,
+        "conversation_depth": 4.0
+      },
+      "turn_efficiency_score": 3.16,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.5,
+        "conversation_depth": 4.0
+      }
+    },
+    {
+      "question_id": "q_007",
+      "user_request": "What are the potential bottlenecks in the current network configuration?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_008",
+      "user_request": "What is the current status of the RIC?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.0,
+        "conversation_depth": 3.0
+      },
+      "turn_efficiency_score": 3.62,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.0,
+        "conversation_depth": 3.0
+      }
+    },
+    {
+      "question_id": "q_009",
+      "user_request": "What xApps are running on the RIC?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 2.0,
+        "conversation_depth": 5.0
+      },
+      "turn_efficiency_score": 2.7,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 2.0,
+        "conversation_depth": 5.0
+      }
+    },
+    {
+      "question_id": "q_010",
+      "user_request": "How is the RIC managing network optimization?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 2.0,
+        "conversation_depth": 5.0
+      },
+      "turn_efficiency_score": 2.7,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 2.0,
+        "conversation_depth": 5.0
+      }
+    },
+    {
+      "question_id": "q_011",
+      "user_request": "What is the current simulation state?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.5,
+        "conversation_depth": 4.0
+      },
+      "turn_efficiency_score": 3.16,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.5,
+        "conversation_depth": 4.0
+      }
+    },
+    {
+      "question_id": "q_012",
+      "user_request": "What is the status of non-existent IMSI_999?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.0,
+        "conversation_depth": 3.0
+      },
+      "turn_efficiency_score": 3.62,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.0,
+        "conversation_depth": 3.0
+      }
+    },
+    {
+      "question_id": "q_013",
+      "user_request": "Compare the performance of different cells in the network",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 5.0,
+        "conversation_depth": 11.0
+      },
+      "turn_efficiency_score": 1.9400000000000002,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 5.0,
+        "conversation_depth": 11.0
+      }
+    },
+    {
+      "question_id": "q_014",
+      "user_request": "Which UEs are using AI services?",
+      "turn_metrics": {
+        "total_turns": 1,
+        "user_turns": 1,
+        "agent_turns": 0,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 0.5
+      },
+      "turn_efficiency_score": 4.77,
+      "turn_breakdown": {
+        "total_turns": 1,
+        "user_turns": 1,
+        "agent_turns": 0,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 0.5
+      }
+    },
+    {
+      "question_id": "q_015",
+      "user_request": "How has the network performance changed over time?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_016",
+      "user_request": "What is the status of edge servers in the network?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_017",
+      "user_request": "What is the QoS performance for IMSI_1?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.5,
+        "conversation_depth": 8.0
+      },
+      "turn_efficiency_score": 2.12,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.5,
+        "conversation_depth": 8.0
+      }
+    },
+    {
+      "question_id": "q_018",
+      "user_request": "What security vulnerabilities exist in the current network configuration?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_019",
+      "user_request": "How many handovers occurred for IMSI_1 in the last hour?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 4.0,
+        "conversation_depth": 9.0
+      },
+      "turn_efficiency_score": 2.06,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 4.0,
+        "conversation_depth": 9.0
+      }
+    },
+    {
+      "question_id": "q_020",
+      "user_request": "What are the current traffic patterns in the network?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 8.0,
+        "conversation_depth": 17.0
+      },
+      "turn_efficiency_score": 1.6,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 8.0,
+        "conversation_depth": 17.0
+      }
+    },
+    {
+      "question_id": "q_021",
+      "user_request": "What is the status of AI model training in the network?",
+      "turn_metrics": {
+        "total_turns": 1,
+        "user_turns": 1,
+        "agent_turns": 0,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 0.5
+      },
+      "turn_efficiency_score": 4.77,
+      "turn_breakdown": {
+        "total_turns": 1,
+        "user_turns": 1,
+        "agent_turns": 0,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 0.5
+      }
+    },
+    {
+      "question_id": "q_022",
+      "user_request": "What network slices are currently active?",
+      "turn_metrics": {
+        "total_turns": 1,
+        "user_turns": 1,
+        "agent_turns": 0,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 0.5
+      },
+      "turn_efficiency_score": 4.77,
+      "turn_breakdown": {
+        "total_turns": 1,
+        "user_turns": 1,
+        "agent_turns": 0,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 0.5
+      }
+    },
+    {
+      "question_id": "q_023",
+      "user_request": "What is the energy consumption of base stations?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.5,
+        "conversation_depth": 2.0
+      },
+      "turn_efficiency_score": 4.08,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.5,
+        "conversation_depth": 2.0
+      }
+    },
+    {
+      "question_id": "q_024",
+      "user_request": "Which network components need predictive maintenance?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_025",
+      "user_request": "What is the average latency for IMSI_1?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.0,
+        "conversation_depth": 7.0
+      },
+      "turn_efficiency_score": 2.18,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.0,
+        "conversation_depth": 7.0
+      }
+    },
+    {
+      "question_id": "q_026",
+      "user_request": "What is the coverage area of BS_001?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.0,
+        "conversation_depth": 3.0
+      },
+      "turn_efficiency_score": 3.62,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.0,
+        "conversation_depth": 3.0
+      }
+    },
+    {
+      "question_id": "q_027",
+      "user_request": "What is the current network capacity and how can it be optimized?",
+      "turn_metrics": {
+        "total_turns": 28,
+        "user_turns": 14,
+        "agent_turns": 14,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 14.0
+      },
+      "turn_efficiency_score": 2.16,
+      "turn_breakdown": {
+        "total_turns": 28,
+        "user_turns": 14,
+        "agent_turns": 14,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 14.0
+      }
+    },
+    {
+      "question_id": "q_028",
+      "user_request": "Are there any interference issues in the network?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_029",
+      "user_request": "How is load balancing performing across cells?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.0,
+        "conversation_depth": 7.0
+      },
+      "turn_efficiency_score": 2.18,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.0,
+        "conversation_depth": 7.0
+      }
+    },
+    {
+      "question_id": "q_030",
+      "user_request": "Which network components are likely to fail in the next 24 hours?",
+      "turn_metrics": {
+        "total_turns": 10,
+        "user_turns": 5,
+        "agent_turns": 5,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 5.0
+      },
+      "turn_efficiency_score": 2.7,
+      "turn_breakdown": {
+        "total_turns": 10,
+        "user_turns": 5,
+        "agent_turns": 5,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 5.0
+      }
+    },
+    {
+      "question_id": "q_031",
+      "user_request": "What is the throughput performance for different UEs?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 7.0,
+        "conversation_depth": 15.0
+      },
+      "turn_efficiency_score": 1.7000000000000002,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 7.0,
+        "conversation_depth": 15.0
+      }
+    },
+    {
+      "question_id": "q_032",
+      "user_request": "Which UEs are currently connected to the network?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.0,
+        "conversation_depth": 3.0
+      },
+      "turn_efficiency_score": 3.62,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.0,
+        "conversation_depth": 3.0
+      }
+    },
+    {
+      "question_id": "q_033",
+      "user_request": "How can network resources be optimized for better performance?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_034",
+      "user_request": "What is the service quality for voice calls in the network?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_035",
+      "user_request": "What is the current bandwidth usage across the network?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.5,
+        "conversation_depth": 8.0
+      },
+      "turn_efficiency_score": 2.12,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.5,
+        "conversation_depth": 8.0
+      }
+    },
+    {
+      "question_id": "q_036",
+      "user_request": "Are there any anomalies detected in the network behavior?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_037",
+      "user_request": "What are the mobility patterns of IMSI_1?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.0,
+        "conversation_depth": 7.0
+      },
+      "turn_efficiency_score": 2.18,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.0,
+        "conversation_depth": 7.0
+      }
+    },
+    {
+      "question_id": "q_038",
+      "user_request": "What is the signal strength for IMSI_1?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.0,
+        "conversation_depth": 3.0
+      },
+      "turn_efficiency_score": 3.62,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 1.0,
+        "conversation_depth": 3.0
+      }
+    },
+    {
+      "question_id": "q_039",
+      "user_request": "How should the network scale based on predicted traffic patterns?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_040",
+      "user_request": "Are there any congested areas in the network?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 2.5,
+        "conversation_depth": 6.0
+      },
+      "turn_efficiency_score": 2.24,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 2.5,
+        "conversation_depth": 6.0
+      }
+    },
+    {
+      "question_id": "q_041",
+      "user_request": "What is the power consumption of IMSI_1?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.5,
+        "conversation_depth": 8.0
+      },
+      "turn_efficiency_score": 2.12,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.5,
+        "conversation_depth": 8.0
+      }
+    },
+    {
+      "question_id": "q_042",
+      "user_request": "How are machine learning models performing in network optimization?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_043",
+      "user_request": "What is the spectrum utilization across different cells?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 5.0,
+        "conversation_depth": 11.0
+      },
+      "turn_efficiency_score": 1.9400000000000002,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 5.0,
+        "conversation_depth": 11.0
+      }
+    },
+    {
+      "question_id": "q_044",
+      "user_request": "What is the connection quality for IMSI_1?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 2.5,
+        "conversation_depth": 6.0
+      },
+      "turn_efficiency_score": 2.24,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 2.5,
+        "conversation_depth": 6.0
+      }
+    },
+    {
+      "question_id": "q_045",
+      "user_request": "How is cognitive radio technology being utilized in the network?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_046",
+      "user_request": "What is the status of backhaul connections?",
+      "turn_metrics": {
+        "total_turns": 4,
+        "user_turns": 2,
+        "agent_turns": 2,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 2.0
+      },
+      "turn_efficiency_score": 4.08,
+      "turn_breakdown": {
+        "total_turns": 4,
+        "user_turns": 2,
+        "agent_turns": 2,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 2.0
+      }
+    },
+    {
+      "question_id": "q_047",
+      "user_request": "What protocols are being used by IMSI_1?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.0,
+        "conversation_depth": 7.0
+      },
+      "turn_efficiency_score": 2.18,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 3.0,
+        "conversation_depth": 7.0
+      }
+    },
+    {
+      "question_id": "q_048",
+      "user_request": "How is network virtualization affecting performance?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    },
+    {
+      "question_id": "q_049",
+      "user_request": "What is the roaming behavior of IMSI_1?",
+      "turn_metrics": {
+        "total_turns": 1,
+        "user_turns": 1,
+        "agent_turns": 0,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 0.5
+      },
+      "turn_efficiency_score": 4.77,
+      "turn_breakdown": {
+        "total_turns": 1,
+        "user_turns": 1,
+        "agent_turns": 0,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 0.5
+      }
+    },
+    {
+      "question_id": "q_050",
+      "user_request": "What infrastructure changes are needed for 5G deployment?",
+      "turn_metrics": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      },
+      "turn_efficiency_score": 4.54,
+      "turn_breakdown": {
+        "total_turns": 2,
+        "user_turns": 1,
+        "agent_turns": 1,
+        "tool_calls_per_turn": 0.0,
+        "conversation_depth": 1.0
+      }
+    }
+  ],
+  "aggregate": {
+    "mean_total_turns": 2.64,
+    "median_total_turns": 2,
+    "min_total_turns": 1,
+    "max_total_turns": 28,
+    "mean_turn_efficiency": 3.4844,
+    "total_questions": 50,
+    "turn_distribution": {
+      "simple": 47,
+      "moderate": 1,
+      "complex": 2
+    }
+  },
+  "note": "Layer 3 Turn Count evaluates the conversation efficiency and complexity of each question."
+}
