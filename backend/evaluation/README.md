@@ -86,6 +86,14 @@ Modern AI systems often use multiple agents (orchestrators, specialists, tool-us
 | Layer 1 | Delegation    | Correctness of sub-task assignment               | Heuristic/LLM           |
 | Layer 2 | Plan.EM       | Match between planned and executed tool usage    | Jaccard + LLM           |
 | Layer 2 | Act.EM        | Match between planned and actual actions         | Jaccard + Reasoning     |
+| Layer 2 | TSR           | Task success rate (binary success/failure)       | Heuristic               |
+| Layer 2 | Hallucination | Rate of incorrect information generation         | LLM-based detection     |
+| Layer 3 | TSR           | Task success rate with LLM judgment              | LLM-as-a-judge          |
+| Layer 3 | Response Quality| Quality of agent responses (1-5 scale)          | LLM-as-a-judge          |
+| Layer 3 | Consistency   | Consistency across similar questions              | LLM-as-a-judge          |
+| Layer 3 | System Cost   | API calls, tokens, processing time efficiency    | Calculated metrics       |
+| Layer 3 | Latency       | Response time and processing efficiency           | Calculated metrics       |
+| Layer 3 | Turn Count    | Conversation efficiency and complexity            | Calculated metrics       |
 
 ---
 
@@ -136,7 +144,34 @@ python backend/evaluation/visualization_engine.py evaluation_results_YYYYMMDD_HH
 ```bash
 python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS
 ```
-- Computes HATT-E Layer 1 and (as implemented) Layer 2 metrics, with visualizations.
+- Computes HATT-E Layer 1, Layer 2, and Layer 3 metrics, with comprehensive visualizations.
+
+### 4. (Optional) Run Specific Layer 3 Metrics
+```bash
+# Task Success Rate (LLM-judged)
+python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --tsr3
+
+# Response Quality (1-5 scale)
+python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --rq
+
+# Consistency across similar questions
+python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --consistency
+
+# System Cost analysis
+python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --cost
+
+# Latency analysis
+python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --latency
+
+# Turn count analysis
+python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --turns
+
+# Layer 3 visualizations
+python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --visualize3
+
+# Layer 3 aggregation
+python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS --aggregate3
+```
 
 ---
 
@@ -153,8 +188,9 @@ python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS
   - Outputs: (Planned) Per-question and aggregate stats, visualizations
 
 - **Layer 3: System/Collaboration**
-  - (Planned) Evaluates overall system performance, collaboration, user outcomes, and task success.
-  - Metrics: Task Success Rate, Response Quality, Cost, Latency, Turn Count, Consistency, etc.
+  - Evaluates overall system performance, collaboration, user outcomes, and task success.
+  - Metrics: Task Success Rate (LLM-judged), Response Quality (1-5 scale), Consistency, System Cost, Latency, Turn Count
+  - Outputs: Per-question and aggregate stats, comprehensive visualizations, correlation analysis, performance dashboard
 
 ---
 
@@ -165,14 +201,16 @@ python backend/evaluation/hatt_e_metrics.py evaluation_results_YYYYMMDD_HHMMSS
   - `dynamic_conversation_evaluation_*.json` — Detailed evaluation results
   - `evaluation_summary_*.json` — High-level summary
   - Plots: `overall_performance.png`, `metric_radar.png`, etc.
-  - HATT-E metrics: `hatt_e_layer1_aggregated.json`, etc.
+  - HATT-E metrics: `hatt_e/layer1/`, `hatt_e/layer2/`, `hatt_e/layer3/` folders with comprehensive results
+  - Layer 3 visualizations: `hatt_e/visualization/` with correlation plots, performance dashboards
 
 ---
 
 ## Customization & Extension
 - **Edit questions:** Modify `conversation_data.json`.
 - **Add metrics:** Extend `hatt_e_metrics.py` or `visualization_engine.py`.
-- **Layer 3:** Placeholder for future system-level evaluation.
+- **Layer 3:** Fully implemented with comprehensive metrics and visualizations.
+- **Academic use:** All metrics provide detailed reasoning and are suitable for research publication.
 
 ---
 

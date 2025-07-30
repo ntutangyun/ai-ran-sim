@@ -1,0 +1,838 @@
+{
+  "layer3_summary": {
+    "task_success_rate": {
+      "mean": 0.5,
+      "total_questions": 0,
+      "success_rate": 0
+    },
+    "response_quality": {
+      "mean": 3.369565217391304,
+      "total_questions": 46,
+      "distribution": {
+        "score_1": 2,
+        "score_1_percentage": 4.3478260869565215,
+        "score_2": 13,
+        "score_2_percentage": 28.26086956521739,
+        "score_3": 8,
+        "score_3_percentage": 17.391304347826086,
+        "score_4": 12,
+        "score_4_percentage": 26.08695652173913,
+        "score_5": 11,
+        "score_5_percentage": 23.91304347826087
+      }
+    },
+    "consistency": {
+      "mean": 3.282608695652174,
+      "total_questions": 46,
+      "distribution": {
+        "score_1_2": 0,
+        "score_1_2_percentage": 0.0,
+        "score_2_3": 9,
+        "score_2_3_percentage": 19.565217391304348,
+        "score_3_4": 18,
+        "score_3_4_percentage": 39.130434782608695,
+        "score_4_5": 16,
+        "score_4_5_percentage": 34.78260869565217
+      }
+    },
+    "system_cost": {
+      "mean_cost": 0.022865806332542416,
+      "mean_efficiency": 2.705241230751648,
+      "total_questions": 50,
+      "cost_distribution": {
+        "low_cost": 8,
+        "medium_cost": 38,
+        "high_cost": 4
+      }
+    },
+    "latency": {
+      "mean_response_time": 11.61325433254242,
+      "mean_efficiency": 2.834844268798828,
+      "total_questions": 50,
+      "latency_distribution": {
+        "fast": 6,
+        "medium": 34,
+        "slow": 10
+      }
+    },
+    "turn_efficiency": {
+      "mean_turns": 2.16,
+      "mean_efficiency": 3.4408,
+      "total_questions": 50,
+      "turn_distribution": {
+        "simple": 48,
+        "moderate": 1,
+        "complex": 1
+      }
+    }
+  },
+  "per_question_combined": [
+    {
+      "question_id": "q_001",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 5,
+        "consistency": 5,
+        "cost_efficiency": 3.021413187927246,
+        "total_cost": 0.01726467030181885,
+        "latency_efficiency": 3.114442157745361,
+        "response_time": 8.968270301818848,
+        "turn_efficiency": 3.62,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.526821146421475
+    },
+    {
+      "question_id": "q_002",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 4,
+        "consistency": 3,
+        "cost_efficiency": 2.726055682525635,
+        "total_cost": 0.01134860793685913,
+        "latency_efficiency": 3.6689348888397215,
+        "response_time": 7.257607936859131,
+        "turn_efficiency": 4.08,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.082660790684594
+    },
+    {
+      "question_id": "q_003",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 3,
+        "consistency": 2,
+        "cost_efficiency": 2.8626881322021487,
+        "total_cost": 0.03033279669494629,
+        "latency_efficiency": 1.5651164627075194,
+        "response_time": 13.820596694946289,
+        "turn_efficiency": 2.24,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.439841760818863
+    },
+    {
+      "question_id": "q_004",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 4,
+        "consistency": 4,
+        "cost_efficiency": 2.7151804828796386,
+        "total_cost": 0.026320487928009034,
+        "latency_efficiency": 2.068275690078735,
+        "response_time": 11.940887928009033,
+        "turn_efficiency": 2.7,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.383407176543935
+    },
+    {
+      "question_id": "q_005",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 3,
+        "cost_efficiency": 3.4275057516479492,
+        "total_cost": 0.012312356208801268,
+        "latency_efficiency": 3.878130130767822,
+        "response_time": 8.01335620880127,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.3589130559282303
+    },
+    {
+      "question_id": "q_006",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 3,
+        "consistency": 3,
+        "cost_efficiency": 1.9205238796386717,
+        "total_cost": 0.03368690300903321,
+        "latency_efficiency": 1.6278775787353514,
+        "response_time": 13.372303009033203,
+        "turn_efficiency": 2.12,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.3842989213020322
+    },
+    {
+      "question_id": "q_007",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 4,
+        "cost_efficiency": 3.299225044128418,
+        "total_cost": 0.00891937389678955,
+        "latency_efficiency": 4.341135654449463,
+        "response_time": 4.706173896789551,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.1119317461580276
+    },
+    {
+      "question_id": "q_008",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 3,
+        "cost_efficiency": 2.6536360649261477,
+        "total_cost": 0.012859098376846314,
+        "latency_efficiency": 3.426470227241516,
+        "response_time": 6.7394983768463135,
+        "turn_efficiency": 3.62,
+        "total_turns": 2
+      },
+      "overall_performance_score": 2.931557970923853
+    },
+    {
+      "question_id": "q_009",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 4,
+        "consistency": 2,
+        "cost_efficiency": 2.2867377342071533,
+        "total_cost": 0.031131556644821166,
+        "latency_efficiency": 1.4285380697250365,
+        "response_time": 14.796156644821167,
+        "turn_efficiency": 2.24,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.5978205006747723
+    },
+    {
+      "question_id": "q_010",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 5,
+        "consistency": 3,
+        "cost_efficiency": 3.551486957824707,
+        "total_cost": 0.026212826054382327,
+        "latency_efficiency": 2.122296352386474,
+        "response_time": 11.555026054382324,
+        "turn_efficiency": 2.7,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.4394469100719878
+    },
+    {
+      "question_id": "q_011",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 5,
+        "consistency": 2,
+        "cost_efficiency": 2.5490916367187504,
+        "total_cost": 0.02057270908203125,
+        "latency_efficiency": 2.605396728515625,
+        "response_time": 10.35430908203125,
+        "turn_efficiency": 3.16,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.1877077951497395
+    },
+    {
+      "question_id": "q_012",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 5,
+        "consistency": 4,
+        "cost_efficiency": 2.7576269970245364,
+        "total_cost": 0.011959325074386597,
+        "latency_efficiency": 3.5859824895858763,
+        "response_time": 7.850125074386597,
+        "turn_efficiency": 4.08,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.3650770984523772
+    },
+    {
+      "question_id": "q_013",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 5,
+        "consistency": 5,
+        "cost_efficiency": 2.0,
+        "total_cost": 0.05154971614875793,
+        "latency_efficiency": 1.0,
+        "response_time": 24.694316148757935,
+        "turn_efficiency": 1.9400000000000002,
+        "total_turns": 2
+      },
+      "overall_performance_score": 4.742873984989632
+    },
+    {
+      "question_id": "q_014",
+      "metrics": {
+        "cost_efficiency": 2.2196658706665042,
+        "total_cost": 0.019508353233337404,
+        "latency_efficiency": 2.5488305473327637,
+        "response_time": 17.508353233337402,
+        "turn_efficiency": 4.77,
+        "total_turns": 1
+      },
+      "overall_performance_score": 4.677726334095001
+    },
+    {
+      "question_id": "q_015",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 3,
+        "cost_efficiency": 3.4047339679870605,
+        "total_cost": 0.009081650800323486,
+        "latency_efficiency": 4.323512887954712,
+        "response_time": 4.832050800323486,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.0136724133831976
+    },
+    {
+      "question_id": "q_016",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 3.0,
+        "cost_efficiency": 1.828,
+        "total_cost": 0.06860246810111999,
+        "latency_efficiency": 1.0,
+        "response_time": 48.105868101119995,
+        "turn_efficiency": 2.12,
+        "total_turns": 2
+      },
+      "overall_performance_score": 7.515308821152639
+    },
+    {
+      "question_id": "q_017",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 4,
+        "consistency": 4,
+        "cost_efficiency": 2.8781210614776613,
+        "total_cost": 0.030046973463058475,
+        "latency_efficiency": 1.8898637151718136,
+        "response_time": 11.500973463058472,
+        "turn_efficiency": 2.18,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.275445023685667
+    },
+    {
+      "question_id": "q_018",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 2,
+        "cost_efficiency": 3.5521896058044433,
+        "total_cost": 0.011395259854888914,
+        "latency_efficiency": 4.0105276203155515,
+        "response_time": 7.067659854888916,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.1477215426079748
+    },
+    {
+      "question_id": "q_019",
+      "metrics": {
+        "cost_efficiency": 2.3524031352996824,
+        "total_cost": 0.016189921617507933,
+        "latency_efficiency": 3.013410973548889,
+        "response_time": 14.189921617507935,
+        "turn_efficiency": 4.77,
+        "total_turns": 1
+      },
+      "overall_performance_score": 4.223654274662335
+    },
+    {
+      "question_id": "q_020",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 4,
+        "consistency": 4,
+        "cost_efficiency": 1.0,
+        "total_cost": 0.05236430075950623,
+        "latency_efficiency": 1.2570458936691282,
+        "response_time": 16.021100759506226,
+        "turn_efficiency": 1.6400000000000001,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.44116788377054
+    },
+    {
+      "question_id": "q_021",
+      "metrics": {
+        "cost_efficiency": 2.1984110736846922,
+        "total_cost": 0.02003972315788269,
+        "latency_efficiency": 2.474438757896423,
+        "response_time": 18.03972315788269,
+        "turn_efficiency": 4.77,
+        "total_turns": 1
+      },
+      "overall_performance_score": 4.7504354521036145
+    },
+    {
+      "question_id": "q_022",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 3,
+        "consistency": 3,
+        "cost_efficiency": 2.10912440222168,
+        "total_cost": 0.02307188994445801,
+        "latency_efficiency": 2.2095914077758785,
+        "response_time": 10.931489944458008,
+        "turn_efficiency": 2.7,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.246659705550003
+    },
+    {
+      "question_id": "q_023",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 4,
+        "cost_efficiency": 2.1994679451141357,
+        "total_cost": 0.031713301372146604,
+        "latency_efficiency": 1.9132818078994749,
+        "response_time": 11.333701372146606,
+        "turn_efficiency": 2.12,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.1997705533165455
+    },
+    {
+      "question_id": "q_024",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 2,
+        "cost_efficiency": 3.049840136886597,
+        "total_cost": 0.009953996577835082,
+        "latency_efficiency": 3.906824479103088,
+        "response_time": 7.808396577835083,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.1643768988003256
+    },
+    {
+      "question_id": "q_025",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 3,
+        "consistency": 4,
+        "cost_efficiency": 1.50824355368042,
+        "total_cost": 0.037593911157989504,
+        "latency_efficiency": 1.0692484378814697,
+        "response_time": 17.362511157989502,
+        "turn_efficiency": 2.12,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.566399673412153
+    },
+    {
+      "question_id": "q_026",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 3.0,
+        "cost_efficiency": 2.7939848654937744,
+        "total_cost": 0.01415037836265564,
+        "latency_efficiency": 3.31532702922821,
+        "response_time": 12.03337836265564,
+        "turn_efficiency": 4.08,
+        "total_turns": 4
+      },
+      "overall_performance_score": 3.904605079467535
+    },
+    {
+      "question_id": "q_027",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 3,
+        "consistency": 2,
+        "cost_efficiency": 3.6010770091094972,
+        "total_cost": 0.009773074772262573,
+        "latency_efficiency": 4.23690553188324,
+        "response_time": 5.450674772262573,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.1048037985034465
+    },
+    {
+      "question_id": "q_028",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 3,
+        "cost_efficiency": 3.3729223229217533,
+        "total_cost": 0.006676941926956176,
+        "latency_efficiency": 4.374348130226135,
+        "response_time": 4.468941926956177,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 2.9703611652538777
+    },
+    {
+      "question_id": "q_029",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 4,
+        "consistency": 4,
+        "cost_efficiency": 2.3507518087158203,
+        "total_cost": 0.02993120478210449,
+        "latency_efficiency": 1.5973153305053707,
+        "response_time": 13.590604782104492,
+        "turn_efficiency": 2.24,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.4231781251230875
+    },
+    {
+      "question_id": "q_030",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 2,
+        "cost_efficiency": 3.587610812591553,
+        "total_cost": 0.00910972968521118,
+        "latency_efficiency": 4.327953844070435,
+        "response_time": 4.800329685211182,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 2.9081255089447975
+    },
+    {
+      "question_id": "q_031",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 4,
+        "consistency": 4,
+        "cost_efficiency": 2.2318924367675783,
+        "total_cost": 0.027902689080810547,
+        "latency_efficiency": 1.8581075286865234,
+        "response_time": 15.692089080810547,
+        "turn_efficiency": 3.16,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.7744435261494953
+    },
+    {
+      "question_id": "q_032",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 4,
+        "consistency": 4,
+        "cost_efficiency": 2.6771130171966555,
+        "total_cost": 0.019572174570083617,
+        "latency_efficiency": 2.7494755601882934,
+        "response_time": 9.325174570083618,
+        "turn_efficiency": 3.16,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.21459281355985
+    },
+    {
+      "question_id": "q_033",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 5,
+        "consistency": 3.0,
+        "cost_efficiency": 3.609396703552246,
+        "total_cost": 0.013565082411193849,
+        "latency_efficiency": 3.993304462432861,
+        "response_time": 7.190682411193848,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.3718831843989054
+    },
+    {
+      "question_id": "q_034",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 3.0,
+        "cost_efficiency": 2.0209634363555913,
+        "total_cost": 0.03747591409111022,
+        "latency_efficiency": 1.5,
+        "response_time": 35.30691409111023,
+        "turn_efficiency": 2.64,
+        "total_turns": 12
+      },
+      "overall_performance_score": 7.313169180194617
+    },
+    {
+      "question_id": "q_035",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 3,
+        "consistency": 4,
+        "cost_efficiency": 1.0,
+        "total_cost": 0.06561154221076965,
+        "latency_efficiency": 1.3697120904922484,
+        "response_time": 15.216342210769653,
+        "turn_efficiency": 1.6,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.250185093719186
+    },
+    {
+      "question_id": "q_036",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 3,
+        "consistency": 4,
+        "cost_efficiency": 2.5475291274414067,
+        "total_cost": 0.017011771813964842,
+        "latency_efficiency": 3.097375946044922,
+        "response_time": 6.840171813964844,
+        "turn_efficiency": 3.16,
+        "total_turns": 2
+      },
+      "overall_performance_score": 2.851343184362793
+    },
+    {
+      "question_id": "q_037",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 4,
+        "consistency": 5,
+        "cost_efficiency": 1.7126461736602785,
+        "total_cost": 0.03508384565849304,
+        "latency_efficiency": 1.994489607810974,
+        "response_time": 10.753645658493042,
+        "turn_efficiency": 2.0,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.1662072539580874
+    },
+    {
+      "question_id": "q_038",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 4,
+        "consistency": 4,
+        "cost_efficiency": 2.564412133468628,
+        "total_cost": 0.012689696663284301,
+        "latency_efficiency": 3.4458184671401977,
+        "response_time": 6.601296663284302,
+        "turn_efficiency": 3.62,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.0271352178396014
+    },
+    {
+      "question_id": "q_039",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 5,
+        "consistency": 3.0,
+        "cost_efficiency": 3.9134899506683354,
+        "total_cost": 0.011562751233291625,
+        "latency_efficiency": 4.283822827339172,
+        "response_time": 5.115551233291626,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.483053345316553
+    },
+    {
+      "question_id": "q_040",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 4,
+        "consistency": 4,
+        "cost_efficiency": 1.0,
+        "total_cost": 0.047713827846527106,
+        "latency_efficiency": 1.6182841014862057,
+        "response_time": 13.4408278465271,
+        "turn_efficiency": 1.7000000000000002,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.2007584195399814
+    },
+    {
+      "question_id": "q_041",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 3,
+        "consistency": 3,
+        "cost_efficiency": 2.5298068942871095,
+        "total_cost": 0.022554827642822267,
+        "latency_efficiency": 2.300180130004882,
+        "response_time": 10.284427642822266,
+        "turn_efficiency": 2.7,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.2296211868446347
+    },
+    {
+      "question_id": "q_042",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 1,
+        "consistency": 2,
+        "cost_efficiency": 3.21342690272522,
+        "total_cost": 0.007064327431869507,
+        "latency_efficiency": 4.313562159538269,
+        "response_time": 4.903127431869507,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 2.747147602695608
+    },
+    {
+      "question_id": "q_043",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 1,
+        "consistency": 3,
+        "cost_efficiency": 3.1942042479553225,
+        "total_cost": 0.014944893801116943,
+        "latency_efficiency": 3.5037508678436278,
+        "response_time": 10.687493801116943,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.4925492263396265
+    },
+    {
+      "question_id": "q_044",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 5,
+        "consistency": 4,
+        "cost_efficiency": 2.1750300506744384,
+        "total_cost": 0.019824248733139038,
+        "latency_efficiency": 2.6613491773605342,
+        "response_time": 7.704648733139038,
+        "turn_efficiency": 2.7,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.2826065262383937
+    },
+    {
+      "question_id": "q_045",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 5,
+        "consistency": 2,
+        "cost_efficiency": 3.8742141153564456,
+        "total_cost": 0.011944647116088867,
+        "latency_efficiency": 4.229265403747558,
+        "response_time": 5.505247116088867,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.1289634758121063
+    },
+    {
+      "question_id": "q_046",
+      "metrics": {
+        "task_success_rate": 0,
+        "response_quality": 2,
+        "consistency": 3.0,
+        "cost_efficiency": 3.3239570504760745,
+        "total_cost": 0.008901073738098144,
+        "latency_efficiency": 4.3447896766662595,
+        "response_time": 4.6800737380981445,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 2.987215192372322
+    },
+    {
+      "question_id": "q_047",
+      "metrics": {
+        "cost_efficiency": 2.381422986984253,
+        "total_cost": 0.015464425325393676,
+        "latency_efficiency": 3.114980454444885,
+        "response_time": 13.464425325393677,
+        "turn_efficiency": 4.77,
+        "total_turns": 1
+      },
+      "overall_performance_score": 4.124382198691368
+    },
+    {
+      "question_id": "q_048",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 5,
+        "consistency": 3.0,
+        "cost_efficiency": 4.20829530986023,
+        "total_cost": 0.013192617253494262,
+        "latency_efficiency": 4.072021584510804,
+        "response_time": 6.628417253494263,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.3846585294576434
+    },
+    {
+      "question_id": "q_049",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 4,
+        "consistency": 4,
+        "cost_efficiency": 2.846036689468383,
+        "total_cost": 0.03404908276329041,
+        "latency_efficiency": 1.335392413139343,
+        "response_time": 15.461482763290405,
+        "turn_efficiency": 2.18,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.650773438740158
+    },
+    {
+      "question_id": "q_050",
+      "metrics": {
+        "task_success_rate": 1,
+        "response_quality": 5,
+        "consistency": 3.0,
+        "cost_efficiency": 4.46050518737793,
+        "total_cost": 0.013487370315551757,
+        "latency_efficiency": 4.0555081558227535,
+        "response_time": 6.746370315551758,
+        "turn_efficiency": 4.54,
+        "total_turns": 2
+      },
+      "overall_performance_score": 3.4239856698964437
+    }
+  ],
+  "performance_overview": {
+    "mean_overall_score": 3.5638089075615924,
+    "min_overall_score": 2.747147602695608,
+    "max_overall_score": 7.515308821152639,
+    "total_questions_analyzed": 50,
+    "performance_distribution": {
+      "excellent": 7,
+      "good": 37,
+      "fair": 6,
+      "poor": 0
+    }
+  },
+  "correlation_insights": {
+    "strong_correlations": [
+      "Task Success Rate and Response Quality typically show strong correlation"
+    ],
+    "weak_correlations": [
+      "Turn count and consistency may show weak correlation depending on question complexity"
+    ],
+    "performance_patterns": [
+      "Cost efficiency and latency efficiency often trade off against each other"
+    ]
+  },
+  "recommendations": [
+    "Optimize task success rate by refining agent responses and error handling",
+    "Fine-tune response quality by optimizing agent communication style",
+    "Optimize system cost by reducing unnecessary API calls and token usage",
+    "Improve latency efficiency by optimizing response time and processing"
+  ]
+}

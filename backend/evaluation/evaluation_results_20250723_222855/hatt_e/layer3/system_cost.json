@@ -1,0 +1,918 @@
+{
+  "per_question": [
+    {
+      "question_id": "q_001",
+      "user_request": "What is the current status of user equipment IMSI_1?",
+      "cost_metrics": {
+        "api_calls": 4,
+        "estimated_tokens": 148.20000000000002,
+        "processing_time_ms": 8968.270301818848,
+        "tool_calls": 2
+      },
+      "total_cost": 0.01726467030181885,
+      "cost_efficiency_score": 3.021413187927246,
+      "cost_breakdown": {
+        "api_calls": 4,
+        "estimated_tokens": 148.20000000000002,
+        "processing_time_ms": 8968.270301818848,
+        "tool_calls": 2
+      }
+    },
+    {
+      "question_id": "q_002",
+      "user_request": "Show me all base stations in the network",
+      "cost_metrics": {
+        "api_calls": 2,
+        "estimated_tokens": 45.5,
+        "processing_time_ms": 7257.607936859131,
+        "tool_calls": 1
+      },
+      "total_cost": 0.01134860793685913,
+      "cost_efficiency_score": 2.726055682525635,
+      "cost_breakdown": {
+        "api_calls": 2,
+        "estimated_tokens": 45.5,
+        "processing_time_ms": 7257.607936859131,
+        "tool_calls": 1
+      }
+    },
+    {
+      "question_id": "q_003",
+      "user_request": "What are the available AI services?",
+      "cost_metrics": {
+        "api_calls": 8,
+        "estimated_tokens": 256.1,
+        "processing_time_ms": 13820.596694946289,
+        "tool_calls": 5
+      },
+      "total_cost": 0.03033279669494629,
+      "cost_efficiency_score": 2.8626881322021487,
+      "cost_breakdown": {
+        "api_calls": 8,
+        "estimated_tokens": 256.1,
+        "processing_time_ms": 13820.596694946289,
+        "tool_calls": 5
+      }
+    },
+    {
+      "question_id": "q_004",
+      "user_request": "What is the relationship between IMSI_1 and its serving cell?",
+      "cost_metrics": {
+        "api_calls": 7,
+        "estimated_tokens": 189.8,
+        "processing_time_ms": 11940.887928009033,
+        "tool_calls": 4
+      },
+      "total_cost": 0.026320487928009034,
+      "cost_efficiency_score": 2.7151804828796386,
+      "cost_breakdown": {
+        "api_calls": 7,
+        "estimated_tokens": 189.8,
+        "processing_time_ms": 11940.887928009033,
+        "tool_calls": 4
+      }
+    },
+    {
+      "question_id": "q_005",
+      "user_request": "How are AI services performing in the network?",
+      "cost_metrics": {
+        "api_calls": 2,
+        "estimated_tokens": 149.5,
+        "processing_time_ms": 8013.3562088012695,
+        "tool_calls": 0
+      },
+      "total_cost": 0.012312356208801268,
+      "cost_efficiency_score": 3.4275057516479492,
+      "cost_breakdown": {
+        "api_calls": 2,
+        "estimated_tokens": 149.5,
+        "processing_time_ms": 8013.3562088012695,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_006",
+      "user_request": "Analyze the performance of cell BS_001_Cell_1 and suggest optimizations",
+      "cost_metrics": {
+        "api_calls": 10,
+        "estimated_tokens": 157.3,
+        "processing_time_ms": 13372.303009033203,
+        "tool_calls": 7
+      },
+      "total_cost": 0.03368690300903321,
+      "cost_efficiency_score": 1.9205238796386717,
+      "cost_breakdown": {
+        "api_calls": 10,
+        "estimated_tokens": 157.3,
+        "processing_time_ms": 13372.303009033203,
+        "tool_calls": 7
+      }
+    },
+    {
+      "question_id": "q_007",
+      "user_request": "What are the potential bottlenecks in the current network configuration?",
+      "cost_metrics": {
+        "api_calls": 2,
+        "estimated_tokens": 106.60000000000001,
+        "processing_time_ms": 4706.173896789551,
+        "tool_calls": 0
+      },
+      "total_cost": 0.00891937389678955,
+      "cost_efficiency_score": 3.299225044128418,
+      "cost_breakdown": {
+        "api_calls": 2,
+        "estimated_tokens": 106.60000000000001,
+        "processing_time_ms": 4706.173896789551,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_008",
+      "user_request": "What is the current status of the RIC?",
+      "cost_metrics": {
+        "api_calls": 3,
+        "estimated_tokens": 59.800000000000004,
+        "processing_time_ms": 6739.4983768463135,
+        "tool_calls": 2
+      },
+      "total_cost": 0.012859098376846314,
+      "cost_efficiency_score": 2.6536360649261477,
+      "cost_breakdown": {
+        "api_calls": 3,
+        "estimated_tokens": 59.800000000000004,
+        "processing_time_ms": 6739.4983768463135,
+        "tool_calls": 2
+      }
+    },
+    {
+      "question_id": "q_009",
+      "user_request": "What xApps are running on the RIC?",
+      "cost_metrics": {
+        "api_calls": 8,
+        "estimated_tokens": 167.70000000000002,
+        "processing_time_ms": 14796.156644821167,
+        "tool_calls": 5
+      },
+      "total_cost": 0.031131556644821166,
+      "cost_efficiency_score": 2.2867377342071533,
+      "cost_breakdown": {
+        "api_calls": 8,
+        "estimated_tokens": 167.70000000000002,
+        "processing_time_ms": 14796.156644821167,
+        "tool_calls": 5
+      }
+    },
+    {
+      "question_id": "q_010",
+      "user_request": "How is the RIC managing network optimization?",
+      "cost_metrics": {
+        "api_calls": 7,
+        "estimated_tokens": 328.90000000000003,
+        "processing_time_ms": 11555.026054382324,
+        "tool_calls": 4
+      },
+      "total_cost": 0.026212826054382327,
+      "cost_efficiency_score": 3.551486957824707,
+      "cost_breakdown": {
+        "api_calls": 7,
+        "estimated_tokens": 328.90000000000003,
+        "processing_time_ms": 11555.026054382324,
+        "tool_calls": 4
+      }
+    },
+    {
+      "question_id": "q_011",
+      "user_request": "What is the current simulation state?",
+      "cost_metrics": {
+        "api_calls": 5,
+        "estimated_tokens": 109.2,
+        "processing_time_ms": 10354.30908203125,
+        "tool_calls": 3
+      },
+      "total_cost": 0.02057270908203125,
+      "cost_efficiency_score": 2.5490916367187504,
+      "cost_breakdown": {
+        "api_calls": 5,
+        "estimated_tokens": 109.2,
+        "processing_time_ms": 10354.30908203125,
+        "tool_calls": 3
+      }
+    },
+    {
+      "question_id": "q_012",
+      "user_request": "What is the status of non-existent IMSI_999?",
+      "cost_metrics": {
+        "api_calls": 2,
+        "estimated_tokens": 54.6,
+        "processing_time_ms": 7850.125074386597,
+        "tool_calls": 1
+      },
+      "total_cost": 0.011959325074386597,
+      "cost_efficiency_score": 2.7576269970245364,
+      "cost_breakdown": {
+        "api_calls": 2,
+        "estimated_tokens": 54.6,
+        "processing_time_ms": 7850.125074386597,
+        "tool_calls": 1
+      }
+    },
+    {
+      "question_id": "q_013",
+      "user_request": "Compare the performance of different cells in the network",
+      "cost_metrics": {
+        "api_calls": 13,
+        "estimated_tokens": 427.7,
+        "processing_time_ms": 24694.316148757935,
+        "tool_calls": 10
+      },
+      "total_cost": 0.05154971614875793,
+      "cost_efficiency_score": 2.0,
+      "cost_breakdown": {
+        "api_calls": 13,
+        "estimated_tokens": 427.7,
+        "processing_time_ms": 24694.316148757935,
+        "tool_calls": 10
+      }
+    },
+    {
+      "question_id": "q_014",
+      "user_request": "Which UEs are using AI services?",
+      "cost_metrics": {
+        "api_calls": 1,
+        "estimated_tokens": 0.0,
+        "processing_time_ms": 17508.353233337402,
+        "tool_calls": 0
+      },
+      "total_cost": 0.019508353233337404,
+      "cost_efficiency_score": 2.2196658706665042,
+      "cost_breakdown": {
+        "api_calls": 1,
+        "estimated_tokens": 0.0,
+        "processing_time_ms": 17508.353233337402,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_015",
+      "user_request": "How has the network performance changed over time?",
+      "cost_metrics": {
+        "api_calls": 2,
+        "estimated_tokens": 124.80000000000001,
+        "processing_time_ms": 4832.050800323486,
+        "tool_calls": 0
+      },
+      "total_cost": 0.009081650800323486,
+      "cost_efficiency_score": 3.4047339679870605,
+      "cost_breakdown": {
+        "api_calls": 2,
+        "estimated_tokens": 124.80000000000001,
+        "processing_time_ms": 4832.050800323486,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_016",
+      "user_request": "What is the status of edge servers in the network?",
+      "cost_metrics": {
+        "api_calls": 10,
+        "estimated_tokens": 248.3,
+        "processing_time_ms": 48105.868101119995,
+        "tool_calls": 7
+      },
+      "total_cost": 0.06860246810111999,
+      "cost_efficiency_score": 1.828,
+      "cost_breakdown": {
+        "api_calls": 10,
+        "estimated_tokens": 248.3,
+        "processing_time_ms": 48105.868101119995,
+        "tool_calls": 7
+      }
+    },
+    {
+      "question_id": "q_017",
+      "user_request": "What is the QoS performance for IMSI_1?",
+      "cost_metrics": {
+        "api_calls": 9,
+        "estimated_tokens": 273.0,
+        "processing_time_ms": 11500.973463058472,
+        "tool_calls": 6
+      },
+      "total_cost": 0.030046973463058475,
+      "cost_efficiency_score": 2.8781210614776613,
+      "cost_breakdown": {
+        "api_calls": 9,
+        "estimated_tokens": 273.0,
+        "processing_time_ms": 11500.973463058472,
+        "tool_calls": 6
+      }
+    },
+    {
+      "question_id": "q_018",
+      "user_request": "What security vulnerabilities exist in the current network configuration?",
+      "cost_metrics": {
+        "api_calls": 2,
+        "estimated_tokens": 163.8,
+        "processing_time_ms": 7067.659854888916,
+        "tool_calls": 0
+      },
+      "total_cost": 0.011395259854888914,
+      "cost_efficiency_score": 3.5521896058044433,
+      "cost_breakdown": {
+        "api_calls": 2,
+        "estimated_tokens": 163.8,
+        "processing_time_ms": 7067.659854888916,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_019",
+      "user_request": "How many handovers occurred for IMSI_1 in the last hour?",
+      "cost_metrics": {
+        "api_calls": 1,
+        "estimated_tokens": 0.0,
+        "processing_time_ms": 14189.921617507935,
+        "tool_calls": 0
+      },
+      "total_cost": 0.016189921617507933,
+      "cost_efficiency_score": 2.3524031352996824,
+      "cost_breakdown": {
+        "api_calls": 1,
+        "estimated_tokens": 0.0,
+        "processing_time_ms": 14189.921617507935,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_020",
+      "user_request": "What are the current traffic patterns in the network?",
+      "cost_metrics": {
+        "api_calls": 18,
+        "estimated_tokens": 171.6,
+        "processing_time_ms": 16021.100759506226,
+        "tool_calls": 15
+      },
+      "total_cost": 0.05236430075950623,
+      "cost_efficiency_score": 1.0,
+      "cost_breakdown": {
+        "api_calls": 18,
+        "estimated_tokens": 171.6,
+        "processing_time_ms": 16021.100759506226,
+        "tool_calls": 15
+      }
+    },
+    {
+      "question_id": "q_021",
+      "user_request": "What is the status of AI model training in the network?",
+      "cost_metrics": {
+        "api_calls": 1,
+        "estimated_tokens": 0.0,
+        "processing_time_ms": 18039.72315788269,
+        "tool_calls": 0
+      },
+      "total_cost": 0.02003972315788269,
+      "cost_efficiency_score": 2.1984110736846922,
+      "cost_breakdown": {
+        "api_calls": 1,
+        "estimated_tokens": 0.0,
+        "processing_time_ms": 18039.72315788269,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_022",
+      "user_request": "What network slices are currently active?",
+      "cost_metrics": {
+        "api_calls": 6,
+        "estimated_tokens": 70.2,
+        "processing_time_ms": 10931.489944458008,
+        "tool_calls": 4
+      },
+      "total_cost": 0.02307188994445801,
+      "cost_efficiency_score": 2.10912440222168,
+      "cost_breakdown": {
+        "api_calls": 6,
+        "estimated_tokens": 70.2,
+        "processing_time_ms": 10931.489944458008,
+        "tool_calls": 4
+      }
+    },
+    {
+      "question_id": "q_023",
+      "user_request": "What is the energy consumption of base stations?",
+      "cost_metrics": {
+        "api_calls": 10,
+        "estimated_tokens": 189.8,
+        "processing_time_ms": 11333.701372146606,
+        "tool_calls": 7
+      },
+      "total_cost": 0.031713301372146604,
+      "cost_efficiency_score": 2.1994679451141357,
+      "cost_breakdown": {
+        "api_calls": 10,
+        "estimated_tokens": 189.8,
+        "processing_time_ms": 11333.701372146606,
+        "tool_calls": 7
+      }
+    },
+    {
+      "question_id": "q_024",
+      "user_request": "Which network components need predictive maintenance?",
+      "cost_metrics": {
+        "api_calls": 1,
+        "estimated_tokens": 72.8,
+        "processing_time_ms": 7808.396577835083,
+        "tool_calls": 0
+      },
+      "total_cost": 0.009953996577835082,
+      "cost_efficiency_score": 3.049840136886597,
+      "cost_breakdown": {
+        "api_calls": 1,
+        "estimated_tokens": 72.8,
+        "processing_time_ms": 7808.396577835083,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_025",
+      "user_request": "What is the average latency for IMSI_1?",
+      "cost_metrics": {
+        "api_calls": 10,
+        "estimated_tokens": 115.7,
+        "processing_time_ms": 17362.511157989502,
+        "tool_calls": 7
+      },
+      "total_cost": 0.037593911157989504,
+      "cost_efficiency_score": 1.50824355368042,
+      "cost_breakdown": {
+        "api_calls": 10,
+        "estimated_tokens": 115.7,
+        "processing_time_ms": 17362.511157989502,
+        "tool_calls": 7
+      }
+    },
+    {
+      "question_id": "q_026",
+      "user_request": "What is the coverage area of BS_001?",
+      "cost_metrics": {
+        "api_calls": 1,
+        "estimated_tokens": 58.5,
+        "processing_time_ms": 12033.37836265564,
+        "tool_calls": 0
+      },
+      "total_cost": 0.01415037836265564,
+      "cost_efficiency_score": 2.7939848654937744,
+      "cost_breakdown": {
+        "api_calls": 1,
+        "estimated_tokens": 58.5,
+        "processing_time_ms": 12033.37836265564,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_027",
+      "user_request": "What is the current network capacity and how can it be optimized?",
+      "cost_metrics": {
+        "api_calls": 2,
+        "estimated_tokens": 161.20000000000002,
+        "processing_time_ms": 5450.674772262573,
+        "tool_calls": 0
+      },
+      "total_cost": 0.009773074772262573,
+      "cost_efficiency_score": 3.6010770091094972,
+      "cost_breakdown": {
+        "api_calls": 2,
+        "estimated_tokens": 161.20000000000002,
+        "processing_time_ms": 5450.674772262573,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_028",
+      "user_request": "Are there any interference issues in the network?",
+      "cost_metrics": {
+        "api_calls": 1,
+        "estimated_tokens": 104.0,
+        "processing_time_ms": 4468.941926956177,
+        "tool_calls": 0
+      },
+      "total_cost": 0.006676941926956176,
+      "cost_efficiency_score": 3.3729223229217533,
+      "cost_breakdown": {
+        "api_calls": 1,
+        "estimated_tokens": 104.0,
+        "processing_time_ms": 4468.941926956177,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_029",
+      "user_request": "How is load balancing performing across cells?",
+      "cost_metrics": {
+        "api_calls": 8,
+        "estimated_tokens": 170.3,
+        "processing_time_ms": 13590.604782104492,
+        "tool_calls": 5
+      },
+      "total_cost": 0.02993120478210449,
+      "cost_efficiency_score": 2.3507518087158203,
+      "cost_breakdown": {
+        "api_calls": 8,
+        "estimated_tokens": 170.3,
+        "processing_time_ms": 13590.604782104492,
+        "tool_calls": 5
+      }
+    },
+    {
+      "question_id": "q_030",
+      "user_request": "Which network components are likely to fail in the next 24 hours?",
+      "cost_metrics": {
+        "api_calls": 2,
+        "estimated_tokens": 154.70000000000002,
+        "processing_time_ms": 4800.329685211182,
+        "tool_calls": 0
+      },
+      "total_cost": 0.00910972968521118,
+      "cost_efficiency_score": 3.587610812591553,
+      "cost_breakdown": {
+        "api_calls": 2,
+        "estimated_tokens": 154.70000000000002,
+        "processing_time_ms": 4800.329685211182,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_031",
+      "user_request": "What is the throughput performance for different UEs?",
+      "cost_metrics": {
+        "api_calls": 6,
+        "estimated_tokens": 105.3,
+        "processing_time_ms": 15692.089080810547,
+        "tool_calls": 3
+      },
+      "total_cost": 0.027902689080810547,
+      "cost_efficiency_score": 2.2318924367675783,
+      "cost_breakdown": {
+        "api_calls": 6,
+        "estimated_tokens": 105.3,
+        "processing_time_ms": 15692.089080810547,
+        "tool_calls": 3
+      }
+    },
+    {
+      "question_id": "q_032",
+      "user_request": "Which UEs are currently connected to the network?",
+      "cost_metrics": {
+        "api_calls": 5,
+        "estimated_tokens": 123.5,
+        "processing_time_ms": 9325.174570083618,
+        "tool_calls": 3
+      },
+      "total_cost": 0.019572174570083617,
+      "cost_efficiency_score": 2.6771130171966555,
+      "cost_breakdown": {
+        "api_calls": 5,
+        "estimated_tokens": 123.5,
+        "processing_time_ms": 9325.174570083618,
+        "tool_calls": 3
+      }
+    },
+    {
+      "question_id": "q_033",
+      "user_request": "How can network resources be optimized for better performance?",
+      "cost_metrics": {
+        "api_calls": 3,
+        "estimated_tokens": 187.20000000000002,
+        "processing_time_ms": 7190.682411193848,
+        "tool_calls": 0
+      },
+      "total_cost": 0.013565082411193849,
+      "cost_efficiency_score": 3.609396703552246,
+      "cost_breakdown": {
+        "api_calls": 3,
+        "estimated_tokens": 187.20000000000002,
+        "processing_time_ms": 7190.682411193848,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_034",
+      "user_request": "What is the service quality for voice calls in the network?",
+      "cost_metrics": {
+        "api_calls": 1,
+        "estimated_tokens": 84.5,
+        "processing_time_ms": 35306.91409111023,
+        "tool_calls": 0
+      },
+      "total_cost": 0.03747591409111022,
+      "cost_efficiency_score": 2.0209634363555913,
+      "cost_breakdown": {
+        "api_calls": 1,
+        "estimated_tokens": 84.5,
+        "processing_time_ms": 35306.91409111023,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_035",
+      "user_request": "What is the current bandwidth usage across the network?",
+      "cost_metrics": {
+        "api_calls": 25,
+        "estimated_tokens": 197.6,
+        "processing_time_ms": 15216.342210769653,
+        "tool_calls": 22
+      },
+      "total_cost": 0.06561154221076965,
+      "cost_efficiency_score": 1.0,
+      "cost_breakdown": {
+        "api_calls": 25,
+        "estimated_tokens": 197.6,
+        "processing_time_ms": 15216.342210769653,
+        "tool_calls": 22
+      }
+    },
+    {
+      "question_id": "q_036",
+      "user_request": "Are there any anomalies detected in the network behavior?",
+      "cost_metrics": {
+        "api_calls": 5,
+        "estimated_tokens": 85.8,
+        "processing_time_ms": 6840.171813964844,
+        "tool_calls": 3
+      },
+      "total_cost": 0.017011771813964842,
+      "cost_efficiency_score": 2.5475291274414067,
+      "cost_breakdown": {
+        "api_calls": 5,
+        "estimated_tokens": 85.8,
+        "processing_time_ms": 6840.171813964844,
+        "tool_calls": 3
+      }
+    },
+    {
+      "question_id": "q_037",
+      "user_request": "What are the mobility patterns of IMSI_1?",
+      "cost_metrics": {
+        "api_calls": 12,
+        "estimated_tokens": 165.1,
+        "processing_time_ms": 10753.645658493042,
+        "tool_calls": 9
+      },
+      "total_cost": 0.03508384565849304,
+      "cost_efficiency_score": 1.7126461736602785,
+      "cost_breakdown": {
+        "api_calls": 12,
+        "estimated_tokens": 165.1,
+        "processing_time_ms": 10753.645658493042,
+        "tool_calls": 9
+      }
+    },
+    {
+      "question_id": "q_038",
+      "user_request": "What is the signal strength for IMSI_1?",
+      "cost_metrics": {
+        "api_calls": 3,
+        "estimated_tokens": 44.2,
+        "processing_time_ms": 6601.296663284302,
+        "tool_calls": 2
+      },
+      "total_cost": 0.012689696663284301,
+      "cost_efficiency_score": 2.564412133468628,
+      "cost_breakdown": {
+        "api_calls": 3,
+        "estimated_tokens": 44.2,
+        "processing_time_ms": 6601.296663284302,
+        "tool_calls": 2
+      }
+    },
+    {
+      "question_id": "q_039",
+      "user_request": "How should the network scale based on predicted traffic patterns?",
+      "cost_metrics": {
+        "api_calls": 3,
+        "estimated_tokens": 223.6,
+        "processing_time_ms": 5115.551233291626,
+        "tool_calls": 0
+      },
+      "total_cost": 0.011562751233291625,
+      "cost_efficiency_score": 3.9134899506683354,
+      "cost_breakdown": {
+        "api_calls": 3,
+        "estimated_tokens": 223.6,
+        "processing_time_ms": 5115.551233291626,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_040",
+      "user_request": "Are there any congested areas in the network?",
+      "cost_metrics": {
+        "api_calls": 17,
+        "estimated_tokens": 136.5,
+        "processing_time_ms": 13440.8278465271,
+        "tool_calls": 14
+      },
+      "total_cost": 0.047713827846527106,
+      "cost_efficiency_score": 1.0,
+      "cost_breakdown": {
+        "api_calls": 17,
+        "estimated_tokens": 136.5,
+        "processing_time_ms": 13440.8278465271,
+        "tool_calls": 14
+      }
+    },
+    {
+      "question_id": "q_041",
+      "user_request": "What is the power consumption of IMSI_1?",
+      "cost_metrics": {
+        "api_calls": 6,
+        "estimated_tokens": 135.20000000000002,
+        "processing_time_ms": 10284.427642822266,
+        "tool_calls": 4
+      },
+      "total_cost": 0.022554827642822267,
+      "cost_efficiency_score": 2.5298068942871095,
+      "cost_breakdown": {
+        "api_calls": 6,
+        "estimated_tokens": 135.20000000000002,
+        "processing_time_ms": 10284.427642822266,
+        "tool_calls": 4
+      }
+    },
+    {
+      "question_id": "q_042",
+      "user_request": "How are machine learning models performing in network optimization?",
+      "cost_metrics": {
+        "api_calls": 1,
+        "estimated_tokens": 80.60000000000001,
+        "processing_time_ms": 4903.127431869507,
+        "tool_calls": 0
+      },
+      "total_cost": 0.007064327431869507,
+      "cost_efficiency_score": 3.21342690272522,
+      "cost_breakdown": {
+        "api_calls": 1,
+        "estimated_tokens": 80.60000000000001,
+        "processing_time_ms": 4903.127431869507,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_043",
+      "user_request": "What is the spectrum utilization across different cells?",
+      "cost_metrics": {
+        "api_calls": 2,
+        "estimated_tokens": 128.70000000000002,
+        "processing_time_ms": 10687.493801116943,
+        "tool_calls": 0
+      },
+      "total_cost": 0.014944893801116943,
+      "cost_efficiency_score": 3.1942042479553225,
+      "cost_breakdown": {
+        "api_calls": 2,
+        "estimated_tokens": 128.70000000000002,
+        "processing_time_ms": 10687.493801116943,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_044",
+      "user_request": "What is the connection quality for IMSI_1?",
+      "cost_metrics": {
+        "api_calls": 6,
+        "estimated_tokens": 59.800000000000004,
+        "processing_time_ms": 7704.648733139038,
+        "tool_calls": 4
+      },
+      "total_cost": 0.019824248733139038,
+      "cost_efficiency_score": 2.1750300506744384,
+      "cost_breakdown": {
+        "api_calls": 6,
+        "estimated_tokens": 59.800000000000004,
+        "processing_time_ms": 7704.648733139038,
+        "tool_calls": 4
+      }
+    },
+    {
+      "question_id": "q_045",
+      "user_request": "How is cognitive radio technology being utilized in the network?",
+      "cost_metrics": {
+        "api_calls": 3,
+        "estimated_tokens": 219.70000000000002,
+        "processing_time_ms": 5505.247116088867,
+        "tool_calls": 0
+      },
+      "total_cost": 0.011944647116088867,
+      "cost_efficiency_score": 3.8742141153564456,
+      "cost_breakdown": {
+        "api_calls": 3,
+        "estimated_tokens": 219.70000000000002,
+        "processing_time_ms": 5505.247116088867,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_046",
+      "user_request": "What is the status of backhaul connections?",
+      "cost_metrics": {
+        "api_calls": 2,
+        "estimated_tokens": 110.5,
+        "processing_time_ms": 4680.0737380981445,
+        "tool_calls": 0
+      },
+      "total_cost": 0.008901073738098144,
+      "cost_efficiency_score": 3.3239570504760745,
+      "cost_breakdown": {
+        "api_calls": 2,
+        "estimated_tokens": 110.5,
+        "processing_time_ms": 4680.0737380981445,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_047",
+      "user_request": "What protocols are being used by IMSI_1?",
+      "cost_metrics": {
+        "api_calls": 1,
+        "estimated_tokens": 0.0,
+        "processing_time_ms": 13464.425325393677,
+        "tool_calls": 0
+      },
+      "total_cost": 0.015464425325393676,
+      "cost_efficiency_score": 2.381422986984253,
+      "cost_breakdown": {
+        "api_calls": 1,
+        "estimated_tokens": 0.0,
+        "processing_time_ms": 13464.425325393677,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_048",
+      "user_request": "How is network virtualization affecting performance?",
+      "cost_metrics": {
+        "api_calls": 3,
+        "estimated_tokens": 282.1,
+        "processing_time_ms": 6628.417253494263,
+        "tool_calls": 0
+      },
+      "total_cost": 0.013192617253494262,
+      "cost_efficiency_score": 4.20829530986023,
+      "cost_breakdown": {
+        "api_calls": 3,
+        "estimated_tokens": 282.1,
+        "processing_time_ms": 6628.417253494263,
+        "tool_calls": 0
+      }
+    },
+    {
+      "question_id": "q_049",
+      "user_request": "What is the roaming behavior of IMSI_1?",
+      "cost_metrics": {
+        "api_calls": 9,
+        "estimated_tokens": 293.8,
+        "processing_time_ms": 15461.482763290405,
+        "tool_calls": 6
+      },
+      "total_cost": 0.03404908276329041,
+      "cost_efficiency_score": 2.846036689468383,
+      "cost_breakdown": {
+        "api_calls": 9,
+        "estimated_tokens": 293.8,
+        "processing_time_ms": 15461.482763290405,
+        "tool_calls": 6
+      }
+    },
+    {
+      "question_id": "q_050",
+      "user_request": "What infrastructure changes are needed for 5G deployment?",
+      "cost_metrics": {
+        "api_calls": 3,
+        "estimated_tokens": 370.5,
+        "processing_time_ms": 6746.370315551758,
+        "tool_calls": 0
+      },
+      "total_cost": 0.013487370315551757,
+      "cost_efficiency_score": 4.46050518737793,
+      "cost_breakdown": {
+        "api_calls": 3,
+        "estimated_tokens": 370.5,
+        "processing_time_ms": 6746.370315551758,
+        "tool_calls": 0
+      }
+    }
+  ],
+  "aggregate": {
+    "mean_total_cost": 0.022865806332542416,
+    "median_total_cost": 0.019508353233337404,
+    "min_total_cost": 0.006676941926956176,
+    "max_total_cost": 0.06860246810111999,
+    "mean_cost_efficiency": 2.705241230751648,
+    "total_questions": 50,
+    "cost_distribution": {
+      "low_cost": 8,
+      "medium_cost": 38,
+      "high_cost": 4
+    }
+  },
+  "note": "Layer 3 System Cost evaluates the computational and financial cost of processing each question."
+}

@@ -411,24 +411,24 @@ class VisualizationEngine:
         metric_names = [m.replace('_', ' ').title() for m in available_metrics]
         base_colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
         try:
-            plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(10, 6))
             if len(metric_names) == 1:
                 bars = plt.bar(metric_names, avg_scores, color=base_colors[0])
             else:
                 color_list = (base_colors * ((len(metric_names) + len(base_colors) - 1) // len(base_colors)))[:len(metric_names)]
                 bars = plt.bar(metric_names, avg_scores, color=color_list)
-            plt.ylim(0, 1)
-            plt.ylabel('Average Score')
-            plt.title('Semantic Analysis Metrics')
-            plt.xticks(rotation=45, ha='right')
-            for bar, score in zip(bars, avg_scores):
-                plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
-                        f'{score:.2f}', ha='center', va='bottom')
-            plt.tight_layout()
+        plt.ylim(0, 1)
+        plt.ylabel('Average Score')
+        plt.title('Semantic Analysis Metrics')
+        plt.xticks(rotation=45, ha='right')
+        for bar, score in zip(bars, avg_scores):
+            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
+                    f'{score:.2f}', ha='center', va='bottom')
+        plt.tight_layout()
             out_path = os.path.join(vis_dir, 'semantic_analysis.png')
-            plt.savefig(out_path)
-            plt.close()
-            print(f"Saved semantic analysis chart to {out_path}")
+        plt.savefig(out_path)
+        plt.close()
+        print(f"Saved semantic analysis chart to {out_path}")
         except Exception as e:
             print(f"Error plotting semantic analysis: {e}")
             print(f"metric_names: {metric_names}")
