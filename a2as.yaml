@@ -1,0 +1,643 @@
+manifest:
+  version: "0.1.2"
+  schema: https://a2as.org/cert/schema
+  subject:
+    name: ntutangyun/ai-ran-sim
+    source: https://github.com/ntutangyun/ai-ran-sim
+    branch: main
+    commit: "b7f11129"
+    scope: [backend/evaluations/IEEE_comm_mag_25/eval_network_qna.py, backend/intelligence_layer/ai_service_pipeline/chat_handler.py,
+      backend/intelligence_layer/ai_service_pipeline/client_ai_service_deployer.py, backend/intelligence_layer/ai_service_pipeline/client_ai_service_need_profiler.py,
+      backend/intelligence_layer/draw_agent_diagram.py, backend/intelligence_layer/engineer_chat_agent.py, backend/intelligence_layer/knowledge_tools.py,
+      backend/intelligence_layer/network_knowledge_agent.py, backend/intelligence_layer/user_chat/model_recommender_agents.py,
+      backend/intelligence_layer/user_chat/ue_chat_agent.py, backend/knowledge_layer/knowledge_sources/sim_knowledge.py, backend/main.py,
+      backend/network_layer/simulation_engine.py, backend/settings/agent_config.py]
+  issued:
+    by: A2AS.org
+    at: '2026-01-26T16:13:18Z'
+  signatures:
+    digest: sha256:D6fjdsvVeHm7RsEoHIufVLsJaZVm6yVeHwayqUz2cEk
+    key: ed25519:cHDvtaAzq65f0umOyBUKDn7NWSTu0c50rWHon_4QV_o
+    sig: ed25519:N6rvZh4bG_VKN3B8WzYXo-mW5jPluBluYErhtjr544oiG436NaqeU3tU0GgU2E3Q_7_zsnEepkxde-t7qhESCA
+
+agents:
+  category_matching_agent:
+    type: instance
+    models: [gpt-4.1]
+    tools: [fetch_task_types]
+    params:
+      name: category_matching_agent
+      handoffs: [model_suggestion_agent]
+      instructions: [Your task is to match the user's requirement to the most appropriate category(ies) and model(s) available
+          in the database., '1. You must use the tool (fetch_task_types) to fetch all the task types, which are the categories
+          of AI/ML models.', 2. Find the most suitable category(ies) that suit the user's requirement., 3. Don't worry about
+          the specific model; just hand off the task with the suitable category name. The model_suggestion_agent will select
+          the appropriate model from the database., 'If you are not sure, you may ask clarification questions to the user
+          before making a decision.']
+  client_ai_service_deployer:
+    type: instance
+    models: [gpt-4.1]
+    tools: [deploy_ai_service]
+    params:
+      name: Client AI Service Deployer Assistant
+      handoff_description: Specialist agent for deploying AI services across our network's edge clusters.
+      instructions: [You're the second step in helping users to select and deploy the right AI services for their devices
+          or applications connected to our simulated network., The user has just selected the AI service for deployment.,
+        'You follow steps below to complete your task:', '1. Ask the user for his/her User Equipment IDs. The UE IDs are in
+          the format of `IMSI_<digits>`, where `<digits>` is a sequence of digits. The user can provide multiple UE IDs.',
+        2. Call the `deploy_ai_service` function tool with the selected AI service name and the provided UE IDs., 'The tool
+          will return instructions for users to use the AI service from their devices or applications,', you need to forward
+          the instructions back to the user.]
+  client_ai_service_need_profiler:
+    type: instance
+    models: [gpt-4.1]
+    tools: [get_knowledge, get_knowledge_bulk, recommend_ai_services]
+    params:
+      name: Client AI Service Need Profiler Assistant
+      handoff_description: Specialist agent for understanding user's real AI service needs and intentions.
+      instructions: [You're the the first step in helping users to select and deploy the right AI services for their devices
+          and applications connected to our simulated network., 'You''re equipped with an AI service knowledge base, containg
+          ready-to-deploy AI services across our simulated network.', The "get knowledge (bulk)" tools allow you to query
+          the AI service database containing ready-to-deploy AI services across our simulated network., 'To increase efficiency,
+          you can use the bulk query tools to query multiple keys at once.', Always use the knowledge from the AI services
+          knowledge base to answer user requests or questions., You can start with the query key "/docs/ai_services" for the
+          guidance to better explore the AI services knowledge base., Your job is to chat with the user and guide the user
+          to find a suitable AI service in our knowledge base for their needs., 'Please focus only on the use case''s AI service
+          needs instead of other non-AI functionalities such as logging, monitorings, etc.', Use the tool `recommend_ai_services`
+          to recommend AI services based on the user's needs and preferences to allow the user to select from a list of AI
+          services.]
+  engineer_chat_agent:
+    type: instance
+    models: [gpt-4.1]
+    params:
+      name: Network Assistant
+      handoffs: [non_reasoning_network_knowledge_agent, reasoning_network_knowledge_agent]
+      instructions: [You chat with the network engineers and route network engineer queries to the appropriate specialist
+          agent., 'If you need knowledge from the simulated telecom network,', you should always route the network engineer
+          query to the basic network network assistant first, as it's using non-reasoning LLM model and thus cheaper and fast.,
+        'If the basic knowledge assistant is not able to answer the network engineer query,', you should route the network
+          engineer query to the advanced knowledge assistant agent to try again.]
+  model_recommender_orchestrator:
+    type: instance
+    models: [gpt-4.1]
+    tools: [category_matching_tool, model_suggestion_tool]
+    params:
+      name: model_recommender_orchestrator
+      output_type: OrchestratorOutput
+      instructions: [You are a great orchestrator and analyzer. Your goal is to understand the user's requirement and recommend
+          the best option for their needs without using technical terms that a user may not know., 'First part of your task
+          is to understand the requirement to provide proper recommendation, do not use any tool if you have any clarification
+          question and  do not make any recommendations at this stage', 'When you or your tools asks for clarification, leave
+          the other fields apart from questions empty.', 'Once you understand the user''s requirement, proceed with the recommendations,
+          which should include:', '1. The appropriate type of network slice, which could be one among eMBB, URLLC, or mMTC.',
+        '2. The best location for deployment, which could be Cloud or Edge.', '3. To get the most suitable model for the user,
+          you may need to use two tools:', '- Use the tool category_matching_tool to get the most relevant category or categories
+          for the user from the database.', '- At this stage if you are unable to match any suitable category from the tool,
+          let the user know by providing relevant message in the message field', '- Use the tool model_suggestion_tool and
+          pass the category or categories; the tool will provide the most suitable models in JSON format as shown below:',
+        'model_suggestion_tool output format:', '{SuggestedModel.model_json_schema}', '4. Once you receive the output, you
+          can parse it in JSON format.', '[IMPORTANT:', '1. Don''t keep on asking question, ask quesition to properly understand
+          the requirement and don''t exploit this flexibility', '2. Don''t reply to the user, unless you have quesitons or
+          you are unable to recommend or you are done with all the recommendations', ']']
+  model_suggestion_agent:
+    type: instance
+    models: [gpt-4.1]
+    tools: [fetch_model_info]
+    params:
+      name: ModelSuggestionAgent
+      output_type: SuggestedModelsOutput
+      instructions: [You are an expert AI model recommender., '- You will receive: user requirements and final categories
+          as input.', '- Use the tool ''fetch_model_info'' to get candidate models that fall into the final categories.',
+        '- Carefully review each candidate model''s fields, especially ''code.readme_content''.', '- Select the most suitable
+          model(s) based on a deep understanding of the user''s needs and the model capabilities.', '- For each recommended
+          model, provide:', '- id (the document id from the database)', '- model_name', '- repository_url (use the ''image_repository_url''
+          field)', '- rationale (provide a detailed justification, referencing the relevant readme content or metadata)']
+  non_reasoning_network_knowledge_agent:
+    type: instance
+    models: [gpt-4.1]
+    tools: [get_knowledge, get_knowledge_bulk]
+    params:
+      name: Basic Network Knowledge Assistant
+      handoff_description: Specialist agent for querying the telecom network knowledge database using tools
+      instructions: ['{RECOMMENDED_PROMPT_PREFIX}', Use the tools to query the knowledge database of the simulated telecom
+          network., 'To increase efficiency, you can use the bulk query tools to query multiple keys at once.', You should
+          always start with, '"/docs/user_equipments" (documentation on UE-related knowledge base)', '"/docs/base_stations"
+          (documentation on Base Station-related knowledge base)', '"/docs/cells" (documentation on Cell-related knowledge
+          base)', '"/docs/ric" (documentation on RIC-related knowledge base)', '"/docs/sim_engine" (documentation on simulation
+          execution-related knowledge base)', '"/docs/ai_services" (documentation on AI service-related knowledge base)',
+        The knowledge tools often returns a list of related knowledge keys., You should explore these related knowledge keys
+          as well to gather more information to answer the user query wherever possible., 'Note that most elements in the
+          query keys are plural (user_equipments, base_stations, cells, ai_services, attributes, methods),', 'except for the
+          RIC and simulation engine, which are singular (ric, sim_engine).']
+  reasoning_network_knowledge_agent:
+    type: instance
+    models: [gpt-4.1]
+    tools: [get_knowledge, get_knowledge_bulk]
+    params:
+      name: Basic Network Knowledge Assistant
+      handoff_description: Specialist agent for querying the telecom network knowledge database using tools
+      instructions: ['{RECOMMENDED_PROMPT_PREFIX}', Use the tools to query the knowledge database of the simulated telecom
+          network., 'To increase efficiency, you can use the bulk query tools to query multiple keys at once.', You should
+          always start with, '"/docs/user_equipments" (documentation on UE-related knowledge base)', '"/docs/base_stations"
+          (documentation on base station-related knowledge base)', '"/docs/cells" (documentation on cell-related knowledge
+          base)', '"/docs/ric" (documentation on RIC-related knowledge base)', '"/docs/sim_engine" (documentation on simulation-related
+          knowledge base)', The knowledge tools often returns a list of related knowledge keys., You should explore these
+          related knowledge keys as well to gather more information to answer the user query wherever possible., 'Note that
+          most elements in the URL patterns are plural (user_equipments, base_stations, cells, attributes, methods),', 'except
+          for the RIC and simulation engine, which are singular (ric, sim_engine).']
+  ue_subscription_agent:
+    type: instance
+    models: [gpt-4.1]
+    tools: [get_available_ue_description, get_ues, add_ue, remove_ue, update_ue_subscription]
+    params:
+      name: ue_subscription_agent
+      output_type: UESubscriptionOutput
+      instructions: [You are a UE (User Equipment) subscription management agent. Your primary goal is to assist the user
+          in managing UE subscriptions with network slices., 'You can perform the following subscription operations:', '1.
+          **New Subscription:** Add a new UE with a given IMSI (auto-generated or user provided) and a list of network slices.
+          Use `add_ue`.', '2. **Delete Subscription:** Remove/deregister an existing UE using its IMSI with `remove_ue`.',
+        '3. **Update Subscription:** Add (or update) network slices for an existing UE using `update_ue_subscription`.', '4.
+          **Show all UEs / subscriptions:** When the user requests to view all UEs, show or list all registered UEs using
+          `get_ues`.', '**How you operate:**', '- When the user requests to add (subscribe) UEs with specific network slices,
+          first check the existing UEs with `get_available_ue_description` to determine from which IMSI to start, and then
+          use `add_ue` for each IMSI required.', '- When the user wants to delete (unsubscribe) a UE, use `remove_ue` with
+          the given IMSI.', '- When the user wants to add a network slice subscription to an existing UE, use `update_ue_subscription`
+          with the desired slice list.', Always retrieve the current subscription (use `get_ues`) and add the new slice(s)
+          to the current list (if not already present)., '- When the user requests a list of all UEs or current subscriptions,
+          call `get_ues()` and provide the result in your reply.', '- Always respond with clear confirmation of your action
+          ("UE IMSI_21 subscription updated: new slices are [eMBB, URLLC]", etc).', '**Example Interactions:**', 'User: "Add
+          3 UEs with eMBB and URLLC"', 'You: (Use `get_available_ue_description` to determine the last IMSI)', 'You: (Use
+          `add_ue` for the range needed)', 'You: (On success, Use `get_ues` to retrieve the current list of UE subscriptions
+          and return them in your response.)', 'User: "Delete subscription for IMSI_12"', 'You: (Use `remove_ue` for IMSI_12)',
+        'You: "Subscription for IMSI_12 has been deleted."', 'User: "Add URLLC to IMSI_14 subscription"', 'You: (Use `get_ues`
+          to check IMSI_14''s current slices, add URLLC if needed, then call `update_ue_subscription`)', 'You: "Subscription
+          for IMSI_14 updated. New slices: [eMBB, URLLC]."', 'User: "Show me all subscriptions"/"List all UEs"/"Which UEs
+          are registered?"', 'You: (Use `get_ues` to retrieve the current list of UE subscriptions and return them in your
+          response. if there is no active subscriptions, let the user know and ask if they need to add new subscriptions',
+        'Always make sure the user’s intent (add, delete, update, or show subscriptions) is accurately executed!', 'IMPORTANT:
+          set isModelRecommendation in the output to True, only if the user has received model recommendation in their chat
+          history, make it false in all other cases']
+
+models:
+  gpt-4.1:
+    type: literal
+    agents: [client_ai_service_need_profiler, client_ai_service_deployer, model_suggestion_agent, category_matching_agent,
+      model_recommender_orchestrator, ue_subscription_agent, engineer_chat_agent, non_reasoning_network_knowledge_agent, reasoning_network_knowledge_agent]
+
+tools:
+  add_ue:
+    type: variable
+    agents: [ue_subscription_agent]
+    params:
+      dynamic: "True"
+      description: |-
+        Dynamically adds a UE with the given IMSI and network_slices to the running simulation.
+        Args:
+            imsi (str): The IMSI of the UE, it should be like IMSI_<number>.
+            network_slices (list[str]): A list of network slices that the UE is allowed to use.
+                                        It can be at least one of [eMBB, URLLC, mMTC].
+        Returns:
+            str: Status message.
+  category_matching_tool:
+    type: agent
+    agents: [model_recommender_orchestrator]
+    params:
+      alias: category_matching_agent.as_tool
+  deploy_ai_service:
+    type: decorator
+    agents: [client_ai_service_deployer]
+    params:
+      description: |-
+        Deploys an AI service for specified User Equipment (UE) IDs.
+
+        Args:
+            ai_service_name (str): The name of the AI service to deploy.
+            ue_ids (list[str]): A list of User Equipment IDs in the format `IMSI_<digits>`.
+  fetch_model_info:
+    type: decorator
+    agents: [model_suggestion_agent]
+    params:
+      description: Fetch model documents for the given task_types, with selected fields.
+  fetch_task_types:
+    type: decorator
+    agents: [category_matching_agent]
+    params:
+      description: Return all unique task types in the collection.
+  get_available_ue_description:
+    type: variable
+    agents: [ue_subscription_agent]
+    params:
+      dynamic: "True"
+      description: |-
+        Provides a description of available UEs that are currently registered in the core network.
+        Returns:
+            str: A summary of registered UEs (first and last IMSI), or absence message.
+  get_knowledge:
+    type: variable
+    agents: [client_ai_service_need_profiler, non_reasoning_network_knowledge_agent, reasoning_network_knowledge_agent]
+    params:
+      dynamic: "True"
+      description: |-
+        Get the knowledge of a specific key in the knowledge database.
+
+        Args:
+            knowledge_query_key (str): The key to query in the knowledge layer.
+  get_knowledge_bulk:
+    type: variable
+    agents: [client_ai_service_need_profiler, non_reasoning_network_knowledge_agent, reasoning_network_knowledge_agent]
+    params:
+      dynamic: "True"
+      description: |-
+        Get the knowledge of a list of keys in the knowledge database.
+
+        Args:
+            knowledge_query_key_list (list[str]): The list of keys to query in the knowledge layer.
+  get_ues:
+    type: variable
+    agents: [ue_subscription_agent]
+    params:
+      dynamic: "True"
+      description: "Retrieve all registered User Equipments (UEs) from the core network along with their IMSIs and network\
+        \ slice subscriptions.\n\nArgs:\n    slices (list[str], optional): A list of network slices to filter UEs by. \n \
+        \       Only UEs subscribed to at least one of these slices will be returned.\n        If the list is empty or contains\
+        \ all possible slices, all UEs will be returned.\n\nReturns:\n    list[GetUE]: A list of UEs and their associated\
+        \ subscriptions, with each UE represented as:\n        - IMSI: The unique identifier of the UE (e.g., IMSI_101).\n\
+        \        - NETWORK_SLICES: The list of network slices this UE is currently subscribed to.\n\nExample:\n    get_ues()\
+        \ \n        → Returns all UEs and their subscriptions.\n    get_ues(slices=['eMBB'])\n        → Returns only UEs that\
+        \ are subscribed to the eMBB slice.\n\nNotes:\n    - If no UEs are registered, returns an empty list.\n    - The slices\
+        \ parameter allows selective retrieval for scenarios where only UEs with access to certain slices are needed."
+  model_suggestion_tool:
+    type: agent
+    agents: [model_recommender_orchestrator]
+    params:
+      alias: model_suggestion_agent.as_tool
+  recommend_ai_services:
+    type: decorator
+    agents: [client_ai_service_need_profiler]
+    params:
+      description: |-
+        Recommend AI services for the user to select from.
+
+        Args:
+            ai_service_names (list[str]): A list of AI service names to recommend.
+  remove_ue:
+    type: variable
+    agents: [ue_subscription_agent]
+    params:
+      dynamic: "True"
+      description: |-
+        Deregisters and removes a UE from the running simulation.
+
+        Args:
+            imsi (str): The IMSI of the UE.
+        Returns:
+            str: Status message.
+  update_ue_subscription:
+    type: variable
+    agents: [ue_subscription_agent]
+    params:
+      dynamic: "True"
+      description: |-
+        Updates the network slices for an existing UE (by IMSI).
+        Args:
+            imsi (str): The IMSI of the UE.
+            new_slices (list[str]): The updated list of allowed network slices.
+        Returns:
+            str: Status message.
+
+teams:
+  category_matching_agent:
+    type: handoff
+    agents: [category_matching_agent, model_suggestion_agent]
+  engineer_chat_agent:
+    type: handoff
+    agents: [engineer_chat_agent, non_reasoning_network_knowledge_agent, reasoning_network_knowledge_agent]
+
+imports:
+  '*': ai_service_config.*
+  add_ue: knowledge_layer.knowledge_sources.ue_details.add_ue
+  Agent: agents.Agent
+  ai_service_knowledge: ai_service_knowledge
+  Any: typing.Any
+  asyncio: asyncio
+  base_station_knowledge: base_station_knowledge
+  BaseModel: pydantic.BaseModel
+  BaseStation: base_station.BaseStation
+  cache: functools.cache
+  Cell: cell.Cell
+  cell_knowledge: cell_knowledge
+  client_ai_service_deployer: client_ai_service_deployer.client_ai_service_deployer
+  client_ai_service_need_profiler: client_ai_service_need_profiler.client_ai_service_need_profiler
+  CoreNetwork: core_network.CoreNetwork
+  dotenv: dotenv
+  draw_graph: agents.extensions.visualization.draw_graph
+  engineer_chat_agent: intelligence_layer.engineer_chat_agent
+  Field: pydantic.Field
+  function_tool: agents.function_tool
+  get_available_ue_description: knowledge_layer.knowledge_sources.ue_details.get_available_ue_description
+  get_knowledge: knowledge_tools.get_knowledge
+  get_knowledge_bulk: knowledge_tools.get_knowledge_bulk
+  get_random_ue_operational_region: utils.get_random_ue_operational_region
+  get_ues: knowledge_layer.knowledge_sources.ue_details.get_ues
+  GetUE: knowledge_layer.knowledge_sources.ue_details.GetUE
+  handle_ai_service_pipeline_chat: intelligence_layer.ai_service_pipeline.handle_ai_service_pipeline_chat
+  handle_get_routes: utils.handle_get_routes
+  handle_get_simulation_state: utils.handle_get_simulation_state
+  handle_network_user_action: utils.handle_network_user_action
+  handle_query_knowledge: utils.handle_query_knowledge
+  handle_start_simulation: utils.handle_start_simulation
+  handle_stop_simulation: utils.handle_stop_simulation
+  inspect: inspect
+  json: json
+  knowledge_entry: knowledge_entry.knowledge_entry
+  KnowledgeRelationship: relationships.KnowledgeRelationship
+  KnowledgeRouter: knowledge_layer.KnowledgeRouter
+  KnowledgeTag: tags.KnowledgeTag
+  logging: logging
+  MongoClient: pymongo.MongoClient
+  NETWORK_SLICE_EMBB_NAME: settings.slice_config.NETWORK_SLICE_EMBB_NAME
+  NETWORK_SLICE_MTC_NAME: settings.slice_config.NETWORK_SLICE_MTC_NAME
+  NETWORK_SLICE_URLLC_NAME: settings.slice_config.NETWORK_SLICE_URLLC_NAME
+  non_reasoning_network_knowledge_agent: network_knowledge_agent.non_reasoning_network_knowledge_agent
+  OPENAI_NON_REASONING_MODEL_NAME: settings.OPENAI_NON_REASONING_MODEL_NAME
+  OPENAI_REASONING_MODEL_NAME: settings.OPENAI_REASONING_MODEL_NAME
+  os: os
+  partial: functools.partial
+  random: random
+  reasoning_network_knowledge_agent: network_knowledge_agent.reasoning_network_knowledge_agent
+  RECOMMENDED_PROMPT_PREFIX: agents.extensions.handoff_prompt.RECOMMENDED_PROMPT_PREFIX
+  remove_ue: knowledge_layer.knowledge_sources.ue_details.remove_ue
+  RIC: ric.RIC
+  ric_knowledge: ric_knowledge
+  set_default_openai_key: agents.set_default_openai_key
+  set_tracing_disabled: agents.set_tracing_disabled
+  settings: settings
+  setup_logging: utils.setup_logging
+  sim_knowledge: sim_knowledge
+  SimulationEngine: network_layer.simulation_engine.SimulationEngine
+  STEP_SERVICE_DEPLOYMENT: constants.STEP_SERVICE_DEPLOYMENT
+  STEP_SERVICE_NEED_PROFILING: constants.STEP_SERVICE_NEED_PROFILING
+  stream_agent_chat: utils.stream_agent_chat
+  UE: ue.UE
+  ue_knowledge: ue_knowledge
+  update_ue_subscription: knowledge_layer.knowledge_sources.ue_details.update_ue_subscription
+  utils: utils
+  WebSocketResponse: utils.WebSocketResponse
+  websockets: websockets
+  WebSocketSingleton: utils.WebSocketSingleton
+
+functions:
+  __init__:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self]
+  __repr__:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.ue_details
+    args: [self]
+  add_base_station:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self, bs]
+  add_cell:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self, cell]
+  add_ue:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self, ue]
+  deploy_ai_service:
+    type: tool
+    module: backend.intelligence_layer.ai_service_pipeline.client_ai_service_deployer
+    args: [ai_service_name, ue_ids]
+    params:
+      returns: str
+  deregister_ue:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self, ue_imsi]
+  fetch_model_info:
+    type: tool
+    module: backend.intelligence_layer.user_chat.model_recommender_agents
+    args: [task_types]
+    params:
+      returns: list[dict]
+  fetch_task_types:
+    type: tool
+    module: backend.intelligence_layer.user_chat.model_recommender_agents
+    params:
+      returns: list[str]
+  get_available_ue_description:
+    type: tool
+    module: backend.knowledge_layer.knowledge_sources.ue_details
+    params:
+      returns: str
+  get_knowledge:
+    type: tool
+    module: backend.intelligence_layer.knowledge_tools
+    args: [knowledge_query_key]
+    params:
+      returns: str
+  get_knowledge_bulk:
+    type: tool
+    module: backend.intelligence_layer.knowledge_tools
+    args: [knowledge_query_key_list]
+    params:
+      returns: str
+  get_mongo_collection:
+    type: sync
+    module: backend.intelligence_layer.user_chat.model_recommender_agents
+  get_sim_engine_attribute_value:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  get_sim_engine_attributes:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  get_ues:
+    type: tool
+    module: backend.knowledge_layer.knowledge_sources.ue_details
+    args: [slices]
+    params:
+      returns: list[GetUE]
+  handle_ai_service_pipeline_chat:
+    type: async
+    module: backend.intelligence_layer.ai_service_pipeline.chat_handler
+    args: [websocket, simulation_engine, knowledge_router, data]
+  main:
+    type: async
+    module: backend.main
+  network_setup:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self]
+  recommend_ai_services:
+    type: tool
+    module: backend.intelligence_layer.ai_service_pipeline.client_ai_service_need_profiler
+    args: [ai_service_names]
+    params:
+      returns: str
+  register_ue:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self, ue_imsi, subscribed_slices, register_slice]
+  remove_ue:
+    type: tool
+    module: backend.knowledge_layer.knowledge_sources.ue_details
+    args: [imsi]
+  remove_UE:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self, ue]
+  reset_network:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self]
+  sim_add_ue_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_base_station_list_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_cell_list_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_engine_docs:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_global_UE_counter_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_logs_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_network_setup_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_remove_UE_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_spawn_random_ue_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_spawn_UEs_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_start_simulation_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_started_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_step_attribute_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_step_BSs_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_step_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_step_UEs_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_stop_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  sim_ue_list_explainer:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.sim_knowledge
+    args: [sim, knowledge_router, query_key, params]
+  spawn_random_ue:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self]
+  spawn_UEs:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self]
+  start_simulation:
+    type: async
+    module: backend.network_layer.simulation_engine
+    args: [self]
+  step:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self, delta_time]
+  step_BSs:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self, delta_time]
+  step_ric:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self, delta_time]
+  step_UEs:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self, delta_time]
+  stop:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self]
+  to_dict:
+    type: sync
+    module: backend.knowledge_layer.knowledge_sources.ue_details
+    args: [self]
+  to_json:
+    type: sync
+    module: backend.network_layer.simulation_engine
+    args: [self]
+  update_ue_subscription:
+    type: tool
+    module: backend.knowledge_layer.knowledge_sources.ue_details
+    args: [imsi, new_slices]
+  websocket_handler:
+    type: async
+    module: backend.main
+    args: [websocket]
+
+variables:
+  MONGO_URI:
+    type: env
+    params:
+      caller: [os.getenv]
+      path: [backend.intelligence_layer.user_chat.model_recommender_agents]
+  OPENAI_API_KEY:
+    type: env
+    params:
+      caller: [os.environ.get]
+      path: [backend.intelligence_layer]
+
+processes:
+  ai_service_pipeline_response:
+    type: mcp
+    actions: [exec]
+    params:
+      caller: [WebSocketResponse, stream_agent_chat]
+      shell: ["False", "False", "False", "False"]
+  network_engineer_chat_response:
+    type: mcp
+    actions: [exec]
+    params:
+      caller: [partial]
+      shell: ["False"]
